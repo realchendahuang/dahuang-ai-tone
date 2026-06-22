@@ -1,6 +1,6 @@
 # 跨风格通用 AI 味清单
 
-> 这份清单列的是**所有模型都会产生的通用 AI 味**——不指向 GPT/Claude/Gemini/豆包任何一个。去 AI 味 skill（如 humanizer-zh）要去掉的就是这些；反过来，**加味时这些是"通用 AI 味"原料**，加了能增加 AI 味，但不增加某模型专属味。
+> 这份清单列的是**所有模型都会产生的通用 AI 味**——不指向 GPT/Claude/Gemini/豆包任何一个。去 AI 味 skill（如 [`dahuang-human-tone`](https://github.com/realchendahuang/dahuang-human-tone)、humanizer-zh）要去掉的就是这些；反过来，**加味时这些是"通用 AI 味"原料**，加了能增加 AI 味，但不增加某模型专属味。
 
 ## 怎么用这份清单
 
