@@ -3,9 +3,9 @@ interface:
   short_description: "AI 味玩梗——加味（把文本改成 GPT/Claude/Gemini/豆包的纯味）+ 找味（检测 AI 味在哪）"
   default_prompt: "Use $dahuang-ai-tone to add AI flavor to this text (rewrite it in GPT/Claude/Gemini/Doubao style by changing structure/tone/behavior, not piling catchphrases), or to detect where the AI flavor is in a text and which family it resembles."
 capabilities:
-  - inject: 按指定模型家族/版本改写文本（改结构/行为模式，不堆口癖）
-  - detect: 指出文本里的 AI 味在哪、像哪个家族
-  - compare: 跨家族风格对比
+  - inject: 按指定模型风格/版本改写文本（改结构/行为模式，不堆口癖）
+  - detect: 指出文本里的 AI 味在哪、像哪个风格
+  - compare: 跨风格风格对比
 resources:
   entry: SKILL.md
   references:
@@ -15,10 +15,10 @@ resources:
     - references/doubao-lexical-patterns.md
     - references/reverse-humanizer.md
   profiles:
-    - profiles/openai-gpt-family.md
-    - profiles/anthropic-claude-family.md
-    - profiles/google-gemini-family.md
-    - profiles/bytedance-doubao-family.md
+    - profiles/openai-gpt-style.md
+    - profiles/anthropic-claude-style.md
+    - profiles/google-gemini-style.md
+    - profiles/bytedance-doubao-style.md
   examples:
     - examples/injection-report.md
     - examples/audit-report.md

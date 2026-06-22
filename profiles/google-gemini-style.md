@@ -1,8 +1,8 @@
-# Google Gemini 家族腔
+# Google Gemini 风格
 
 ## 适用边界
 
-这个 profile 描述 Gemini 家族的味，不判断文本来源。Gemini 有 Pro、Flash、Flash-Lite、experimental、preview、stable 等版本形态。
+这个 profile 描述 Gemini 风格的味，不判断文本来源。Gemini 有 Pro、Flash、Flash-Lite、experimental、preview、stable 等版本形态。
 
 **诚实声明**：Gemini 官方文档（ai.google.dev）调研时 fetch 被墙，没拿到官方文本证据。但本 profile 有两类来源支撑：Aider 量化数据（格式合规率、编辑格式偏好、通过率）+ 社区/媒体/学术多源报道（Reddit 多帖、Scientific American 语言学分析、arXiv 论文 em dash 量化）。
 
@@ -16,7 +16,7 @@
 
 Gemini 2.5 Pro（default think）格式合规率 100.0%、畸形响应 0 次；32k think 版本 99.6% 合规、1 次畸形。
 
-这是所有模型里最听话、最规整的。可观察：如果文本来自 Gemini 家族且格式极度规整、分点无瑕疵、结构严密，可以提 Gemini 表面相似。
+这是所有模型里最听话、最规整的。可观察：如果文本属于 Gemini 风格且格式极度规整、分点无瑕疵、结构严密，可以提 Gemini 表面相似。
 
 来源：Aider polyglot 榜单。
 
@@ -117,17 +117,17 @@ Gemini 的 AI 味来自热情包装和过度解释。
 ## 认味不丢人
 
 - **不能凭 em dash 判 Gemini**——arXiv 论文显示 Gemini 2.5 Pro 的 em dash 频率反而比 GPT/Claude 低。
-- **不能凭"You're absolutely right"判 Gemini**——Claude 也有这个口癖（GitHub issue 3382 + Reddit ClaudeAI），是 Claude+Gemini 跨家族共享。见 `references/claude-lexical-patterns.md` 第四节。
-- **不能凭"过度列表/过度粗体"判 Gemini**——各家 AI 都会用，不区分家族。
-- **不能凭"这是一个很好的问题"判 Gemini**——跨家族中文 AI 通用。
-- **不能凭"You're not just doing X; you're doing Y"判 Gemini**——和 GPT 的"不是 X 而是 Y"高度相似，是跨家族 AI 通用上价值句式。
+- **不能凭"You're absolutely right"判 Gemini**——Claude 也有这个口癖（GitHub issue 3382 + Reddit ClaudeAI），是 Claude+Gemini 跨风格共享。见 `references/claude-lexical-patterns.md` 第四节。
+- **不能凭"过度列表/过度粗体"判 Gemini**——各家 AI 都会用，不区分风格。
+- **不能凭"这是一个很好的问题"判 Gemini**——跨风格中文 AI 通用。
+- **不能凭"You're not just doing X; you're doing Y"判 Gemini**——和 GPT 的"不是 X 而是 Y"高度相似，是跨风格 AI 通用上价值句式。
 - Gemini 词汇口癖样本基于社区/媒体多源报道构造，不是真实模型输出（引号癖和 "Great request!" 有 Reddit 多帖报道，Scientific American 有语言学分析，arXiv 有 em dash 量化数据）。
 
 ## 加味方法
 
 加味不是堆口癖，是改回答表面。见 `references/reverse-humanizer.md`。
 
-加 Gemini 家族味：
+加 Gemini 味：
 
 1. **引号癖**：在不需要的普通名词周围加引号（"问题"/"工具"/"功能"/"工作流"），像 AI 在给每个词戴安全帽。这是 Gemini 最强专属签名。
 2. **夸夸开头**：回答第一句先夸"Great request!" / "这是一个非常好的问题"，像过度兴奋的客服。
@@ -138,5 +138,5 @@ Gemini 的 AI 味来自热情包装和过度解释。
 7. **鼓励式收尾**：用 "Go ahead, you earned it." / "你可以做到的" 收尾。
 8. **代码编辑**：用 diff-fenced 格式（```diff 包裹）。
 9. **避免**：堆 em dash 当 Gemini 味——arXiv 论文显示 Gemini 的 em dash 频率反而比 GPT/Claude 低。
-10. **避免**：堆"You're absolutely right"当 Gemini 味——这是 Claude+Gemini 跨家族共享，不区分家族。
-11. **避免**：堆"过度列表"当 Gemini 味——各家 AI 都会用，不区分家族。要加 Gemini 味应该改引号癖+夸夸开头+类比开头+小标题包装组合。
+10. **避免**：堆"You're absolutely right"当 Gemini 味——这是 Claude+Gemini 跨风格共享，不区分风格。
+11. **避免**：堆"过度列表"当 Gemini 味——各家 AI 都会用，不区分风格。要加 Gemini 味应该改引号癖+夸夸开头+类比开头+小标题包装组合。

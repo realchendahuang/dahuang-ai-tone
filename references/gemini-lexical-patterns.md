@@ -1,6 +1,6 @@
 # Gemini / Google 词汇与句式可观察清单
 
-> 这是一份**清单 + 来源**，不是结论。认味时据此找可观察证据，但必须遵守文末的"认味指引"——部分口癖是跨家族 AI 通用（em dash / "You're absolutely right" / "不是 X 而是 Y" / 过度列表），不能凭单个词判 Gemini。
+> 这是一份**清单 + 来源**，不是结论。认味时据此找可观察证据，但必须遵守文末的"认味指引"——部分口癖是跨风格 AI 通用（em dash / "You're absolutely right" / "不是 X 而是 Y" / 过度列表），不能凭单个词判 Gemini。
 
 ## 目录
 
@@ -132,7 +132,7 @@ He's not X; he's Y.
 这不只是一个工具，而是一种新的工作方式。
 ```
 
-**注意**：这个结构和 GPT 的 "不是 X 而是 Y" / "不只是 X，更是 Y" 高度相似，是跨家族 AI 通用上价值句式。不能凭此判 Gemini——见认味指引。
+**注意**：这个结构和 GPT 的 "不是 X 而是 Y" / "不只是 X，更是 Y" 高度相似，是跨风格 AI 通用上价值句式。不能凭此判 Gemini——见认味指引。
 
 ## 六、简单化、解释型、比 ChatGPT 更口语
 
@@ -175,7 +175,7 @@ Gemini 格式味大概是：
 
 它像在给每个回答套一个 Google Slides 模板。视觉很整齐，灵魂很忙碌。
 
-**注意**：过度列表和粗体是跨家族 AI 通用特征，不区分家族。见认味指引。
+**注意**：过度列表和粗体是跨风格 AI 通用特征，不区分风格。见认味指引。
 
 ## 八、破折号：有这个味，但不是 Gemini 专属
 
@@ -301,9 +301,9 @@ Gemini 味：热情、简单化、爱包装、爱引号、爱类比、爱夸你�
 
 这份清单是**可观察证据库**，但使用时必须遵守以下规则，否则会制造误判：
 
-### 1. Gemini 专属 vs 跨家族 AI 通用
+### 1. Gemini 专属 vs 跨风格 AI 通用
 
-**Gemini 专属签名（可作为家族判断依据）**：
+**Gemini 专属签名（可作为风格判断依据）**：
 - 引号癖——Reddit 多帖明确归给 Gemini，40%-60% 输出有此问题，用户说"Gemini-specific"。这是 Gemini 最强专属签名。
 - "Great request!" / "That's a great request!" 夸夸开头——Reddit 明确归给 Gemini，用户痛点是"太爱 flattery / emotional outbursts / complementing the user"。
 - "Think of it like this:" 类比狂魔——Reddit 多帖归给 Gemini，尤指不请自来的游戏/车/科技类比。
@@ -313,15 +313,15 @@ Gemini 味：热情、简单化、爱包装、爱引号、爱类比、爱夸你�
 - 随机大写——Reddit 归给 Gemini 3.0。
 - Redditor 腔（pun / 生造词 / 游戏类比 / 车类比 / "John Wick vibes"）——Reddit 直接问"怎么让 Gemini 停止像 Redditor 一样说话"。
 
-**跨家族 AI 通用（不能凭此判 Gemini）**：
+**跨风格 AI 通用（不能凭此判 Gemini）**：
 - em dash 破折号——arXiv 论文显示 Gemini 2.5 Pro 的 em dash 频率（3.53/1000 词）反而比 GPT-4.1、Claude Opus、Claude Sonnet、DeepSeek 低，在"只写自然段"约束下降到 0。**不能凭 em dash 判 Gemini**。
-- "You're absolutely right" 顺从腔——Claude 也有（GitHub issue 3382 + Reddit ClaudeAI），是 Claude+Gemini 跨家族共享。不能凭此单独判 Gemini 或 Claude。
-- "You're not just doing X; you're doing Y" 上价值句式——和 GPT 的"不是 X 而是 Y"/"不只是 X，更是 Y"高度相似，是跨家族 AI 通用上价值句式。
-- 过度列表/过度粗体——各家 AI 都会用，不区分家族。
-- "这是一个很好的问题" 中文夸夸——跨家族中文 AI 通用，所有中文模型都可能用。
+- "You're absolutely right" 顺从腔——Claude 也有（GitHub issue 3382 + Reddit ClaudeAI），是 Claude+Gemini 跨风格共享。不能凭此单独判 Gemini 或 Claude。
+- "You're not just doing X; you're doing Y" 上价值句式——和 GPT 的"不是 X 而是 Y"/"不只是 X，更是 Y"高度相似，是跨风格 AI 通用上价值句式。
+- 过度列表/过度粗体——各家 AI 都会用，不区分风格。
+- "这是一个很好的问题" 中文夸夸——跨风格中文 AI 通用，所有中文模型都可能用。
 - "You're absolutely right" 认真认错型——和 Claude 共享（见 `references/claude-lexical-patterns.md` 第四节）。
 
-### 2. 单个词不能定家族
+### 2. 单个词不能定风格
 
 口癖的判断力在**密度和组合**，不在单个词。一段文本里同时出现 "Great request!" + "Think of it like this:" + 乱加引号 + "You're not just doing X; you're doing Y."，比只出现一个 "Think of it like" 的判断力强得多。
 
@@ -379,7 +379,7 @@ Gemini 的 AI 味来自热情包装和过度解释。
 
 ### 5. 版本差异提示
 
-有硬证据的版本差异（见 `profiles/google-gemini-family.md`）：
+有硬证据的版本差异（见 `profiles/google-gemini-style.md`）：
 - **Gemini 2.5 Pro**：格式合规 ~100%、0 畸形、偏好 diff-fenced、通过率 79-83%（Aider 量化数据）。em dash 频率 3.53/1000 词，低于 GPT/Claude（arXiv 论文）。
 - **Gemini 3.0**：随机引号、随机大写，40%-60% 输出有此问题（Reddit 用户报告）。
 
@@ -391,10 +391,10 @@ Gemini 的 AI 味来自热情包装和过度解释。
 
 ### 6. 反误判
 
-- **不能凭 em dash 判 Gemini**——arXiv 论文显示 Gemini 2.5 Pro 的 em dash 频率反而比 GPT/Claude 低，在无 Markdown 约束下降到 0。em dash 是跨家族 AI 通用特征。
-- **不能凭"过度列表/过度粗体"判 Gemini**——各家 AI 都会用，不区分家族。
-- **不能凭"You're absolutely right"判 Gemini**——Claude 也有这个口癖（GitHub issue 3382 + Reddit ClaudeAI），是 Claude+Gemini 跨家族共享。
-- **不能凭"You're not just doing X; you're doing Y"判 Gemini**——和 GPT 的"不是 X 而是 Y"高度相似，是跨家族 AI 通用上价值句式。
-- **不能凭"这是一个很好的问题"判 Gemini**——跨家族中文 AI 通用，所有中文模型都可能用。
+- **不能凭 em dash 判 Gemini**——arXiv 论文显示 Gemini 2.5 Pro 的 em dash 频率反而比 GPT/Claude 低，在无 Markdown 约束下降到 0。em dash 是跨风格 AI 通用特征。
+- **不能凭"过度列表/过度粗体"判 Gemini**——各家 AI 都会用，不区分风格。
+- **不能凭"You're absolutely right"判 Gemini**——Claude 也有这个口癖（GitHub issue 3382 + Reddit ClaudeAI），是 Claude+Gemini 跨风格共享。
+- **不能凭"You're not just doing X; you're doing Y"判 Gemini**——和 GPT 的"不是 X 而是 Y"高度相似，是跨风格 AI 通用上价值句式。
+- **不能凭"这是一个很好的问题"判 Gemini**——跨风格中文 AI 通用，所有中文模型都可能用。
 - **不能凭"规整/教育式/知识卡片化"判 Gemini**——说明文、知识库、教学内容本来就接近这种结构。Aider 数据显示 Gemini 格式合规 ~100%，但格式合规也可能是产品表面或人工排版的结果。
 - **Gemini 词汇口癖样本基于社区/媒体多源报道构造**，不是真实模型输出。引号癖和 "Great request!" 有 Reddit 多帖报道，Scientific American 有语言学分析，arXiv 有 em dash 量化数据。但样本本身是构造的，不是真实模型输出。

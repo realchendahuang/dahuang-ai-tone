@@ -1,6 +1,6 @@
 # GPT / ChatGPT 词汇与句式可观察清单
 
-> 这是一份**清单 + 来源**，不是结论。认味时据此找可观察证据，但必须遵守文末的"认味指引"——很多口癖是跨家族 AI 通用，不能凭单个词判 GPT。
+> 这是一份**清单 + 来源**，不是结论。认味时据此找可观察证据，但必须遵守文末的"认味指引"——很多口癖是跨风格 AI 通用，不能凭单个词判 GPT。
 
 ## 目录
 
@@ -343,15 +343,15 @@ showcasing
 
 这份清单是**可观察证据库**，但使用时必须遵守以下规则，否则会制造误判：
 
-### 1. 跨家族通用 vs GPT 专属
+### 1. 跨风格通用 vs GPT 专属
 
-**大多数英文高频词（delve/tapestry/landscape/underscore/intricate/pivotal/crucial/meticulous/robust/foster/garner/highlight/emphasize/showcase/bolster/enduring/interplay/valuable/vibrant）是跨家族 AI 通用口癖，不是 GPT 专属。** Claude、Gemini、中文模型都可能用。不能凭单个词判 GPT。
+**大多数英文高频词（delve/tapestry/landscape/underscore/intricate/pivotal/crucial/meticulous/robust/foster/garner/highlight/emphasize/showcase/bolster/enduring/interplay/valuable/vibrant）是跨风格 AI 通用口癖，不是 GPT 专属。** Claude、Gemini、中文模型都可能用。不能凭单个词判 GPT。
 
-**GPT/ChatGPT 专属（可作为家族签名）**：
+**GPT/ChatGPT 专属（可作为风格签名）**：
 - 中文"我会稳稳地接住你""砍一刀"——WIRED 报道的 ChatGPT 中文本地化口癖。
 - 冒号滥用（`X: Y` 到处用）——Reddit 吐槽的 ChatGPT 格式癖。
 
-### 2. 单个词不能定家族
+### 2. 单个词不能定风格
 
 口癖的判断力在**密度和组合**，不在单个词。一段文本里同时出现 delve + tapestry + landscape + navigating the complexities + rule of three + not only but also，比只出现一个 delve 的判断力强得多。
 
@@ -365,11 +365,11 @@ GPT-4/4o/5 时代的词汇差异（Wikipedia 社群整理）可以作为**版本
 
 ### 5. 中文口癖的判断力
 
-中文"不是 X 而是 Y"是跨家族 AI 通用句式（Threads/Facebook/WIRED 都在吐槽，但没说是 GPT 专属）——不能凭它判 GPT。但"我会稳稳地接住你""砍一刀"是 WIRED 明确报道的 ChatGPT 中文口癖，可以作为 GPT 家族签名。
+中文"不是 X 而是 Y"是跨风格 AI 通用句式（Threads/Facebook/WIRED 都在吐槽，但没说是 GPT 专属）——不能凭它判 GPT。但"我会稳稳地接住你""砍一刀"是 WIRED 明确报道的 ChatGPT 中文口癖，可以作为 GPT 风格签名。
 
 ### 6. 格式口癖
 
-过度 markdown/粗体/竖向列表/em dash/跳级标题/冒号滥用——这些是 AI 通用格式癖，不区分家族，但 GPT 家族（尤其 ChatGPT 产品表面）高频。o-series 例外：默认无 markdown（见 `profiles/openai-gpt-family.md`）。
+过度 markdown/粗体/竖向列表/em dash/跳级标题/冒号滥用——这些是 AI 通用格式癖，不区分风格，但 GPT 风格（尤其 ChatGPT 产品表面）高频。o-series 例外：默认无 markdown（见 `profiles/openai-gpt-style.md`）。
 
 ### 7. 反误判
 

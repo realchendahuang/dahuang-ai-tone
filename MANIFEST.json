@@ -2,89 +2,89 @@
   "skill": {
     "name": "dahuang-ai-tone",
     "version": "3.0.0",
-    "description": "AI 味玩梗 skill。不同模型家族有不同的 AI 味，这里是它们的味标本馆。把正常文本加成 GPT/Claude/Gemini/豆包的纯味（改结构/语气/行为模式，不堆口癖），或者指出一段文本里的 AI 味在哪、像哪个家族。跨家族通用口癖不单独判家族，判断力在密度和组合。",
+    "description": "AI 味玩梗 skill。不同模型风格有不同的 AI 味，这里是它们的味标本馆。把正常文本加成 GPT/Claude/Gemini/豆包的纯味（改结构/语气/行为模式，不堆口癖），或者指出一段文本里的 AI 味在哪、像哪个风格。跨风格通用口癖不单独判风格，判断力在密度和组合。",
     "entry": "SKILL.md",
     "license": "MIT"
   },
   "files": [
     {
       "path": "SKILL.md",
-      "sha256": "14ca04634ecf7b61f91b15304bf1ee919681f6a5331a8fea6238916f3a63bfd4",
+      "sha256": "0510e1345833a32ca2d046d257e75be8614899fb7f4bc31657d27e96e1578add",
       "role": "entry"
     },
     {
       "path": "README.md",
-      "sha256": "02765bf5be8130d72ab9179d4f8d8e267db4d03f1c69a1260d9d4600069380af",
+      "sha256": "faf31a5945213746fa161b342b98e5e4b9dd9965c397156c7bcd6ff4b3ceacf0",
       "role": "doc"
     },
     {
       "path": "agents/openai.yaml",
-      "sha256": "a07bdd06a8448998d9fd47039ff662d085cba00b830b858c4e4a9e61a1dcb093",
+      "sha256": "529d483d4892bf44909d475cadae66b8bd6baee63cc22354227657732aeb3447",
       "role": "agent-config"
     },
     {
       "path": "references/gpt-lexical-patterns.md",
-      "sha256": "2541fb47649ce6f08e85491becbb383c7ab6448c4c1185e3177cef2dcfab7538",
+      "sha256": "e99e340643109c696853cadb3446cedc8e8d3bd1769bcdf11124ac21f38f7206",
       "role": "reference"
     },
     {
       "path": "references/claude-lexical-patterns.md",
-      "sha256": "0bbf03fbcbb87353d5588db2aef18cd521f60ef7d1b47c68ed5b697259669138",
+      "sha256": "c8b06ffe94e16d5fc1f94314f59ebfbaf8f405f51d8eadf89eeb5879126c8d47",
       "role": "reference"
     },
     {
       "path": "references/gemini-lexical-patterns.md",
-      "sha256": "c75fd994bd6167fa67929e5683ba07d7bfe2d3be9bcb5b7e97f17eead28bc378",
+      "sha256": "fbe13cfaf1126c61aa9aebaf799dae3574626b405dc4c72dcc41b630e85da659",
       "role": "reference"
     },
     {
       "path": "references/doubao-lexical-patterns.md",
-      "sha256": "466f289698619434e2ddec77f858f92757beaa83eaf0eca0aa7d4cf072465f6a",
+      "sha256": "39d6de6d71f779a152ff2455ce602c78c96b8174aec4358415b41ac02a1565f5",
       "role": "reference"
     },
     {
       "path": "references/reverse-humanizer.md",
-      "sha256": "65033a23159f07ed0ce6205c02c3429c561617c3f5377998f372bf51e5a5ab67",
+      "sha256": "25094a50bbfa6d51c1504837e55eb720007d69d9bb58d6702d87eda48563b1f3",
       "role": "reference"
     },
     {
-      "path": "profiles/openai-gpt-family.md",
-      "sha256": "1ba10c806970274c3a1122d4a052f521e89e1fba489a74afd79ca725148731ba",
+      "path": "profiles/openai-gpt-style.md",
+      "sha256": "c88f1c13c38f01d7a88ec153947847f1e153711db590f8ba1f9067420a54f601",
       "role": "profile"
     },
     {
-      "path": "profiles/anthropic-claude-family.md",
-      "sha256": "fdee7b334670f2fb4d101cc2f8eb33bfcf2edf363323e0a22206c31ea8a1f80a",
+      "path": "profiles/anthropic-claude-style.md",
+      "sha256": "af3bda3a4faee88bfb94524db488f7bbc1a09121be94cf6860b4c7be60229856",
       "role": "profile"
     },
     {
-      "path": "profiles/google-gemini-family.md",
-      "sha256": "a1f35def6729881b8bb277a98c845eae85f100ca86122146a9e30483f5f99499",
+      "path": "profiles/google-gemini-style.md",
+      "sha256": "30249ac375d1ad85e72cbdca43d856435b68e998f78a4a61a047fb4a9f70fc2e",
       "role": "profile"
     },
     {
-      "path": "profiles/bytedance-doubao-family.md",
-      "sha256": "4cccf2ff768b4a17eccac6c07bd9d202336716d635794e67f1333627ce611820",
+      "path": "profiles/bytedance-doubao-style.md",
+      "sha256": "2f5015d9116160843248ec16fe00cdb5c6593a96498b400946e6e4bc7087b62c",
       "role": "profile"
     },
     {
       "path": "examples/audit-report.md",
-      "sha256": "6d818545641a43a2d934603af1e549d9699b5b6e67733c305f077111d90a4881",
+      "sha256": "ae45d504c570b9e18e50fd5c45eb6308c3e77c9522ee77fcb3304bcd531d0d23",
       "role": "example"
     },
     {
       "path": "examples/comparison.md",
-      "sha256": "f29dffba3b94612a6f6c13cffccdaec6edf96f55947278d4f24592037ded0a8a",
+      "sha256": "fe4f86d56234aa68a015ff3c670ae8829caa86eb037d012b86e052de8280a155",
       "role": "example"
     },
     {
       "path": "examples/injection-report.md",
-      "sha256": "0d16cb828e8b55355ea312db914d8bb1745363c404406ff4fecd3718debd63fe",
+      "sha256": "ff5e348762e603b91e926cdf99c78167968c0dfa069a850cea598cc71dbe07c0",
       "role": "example"
     },
     {
       "path": "examples/fixtures.md",
-      "sha256": "90149a355cc71bae51613a4dc1ec02971f15312bb962022e83ede4240dd0fcda",
+      "sha256": "6028cdabf576f9fcc9d37fa6159fb54c8135b8480218a31000c8cd3483f23b98",
       "role": "example"
     }
   ],
@@ -304,10 +304,10 @@
     "Claude 词汇口癖样本基于社区/媒体多源报道构造，不是真实模型输出——其中保姆腔有 Anthropic 自己承认是 character tic 的硬证据，diplomatic padding 和顺从腔有 Reddit/GitHub 多帖报道；Claude 官方硬签名（4.8 direct/招牌美学/4.5/4.6 过度工程）是真实文档",
     "Gemini 词汇口癖样本基于社区/媒体/学术多源报道构造，不是真实模型输出——引号癖和 Great request 有 Reddit 多帖报道，Scientific American 有语言学分析，arXiv 有 em dash 量化数据；Gemini 官方文档 fetch 被墙",
     "多数版本差异是推导——只有各 profile 里标明的几条有硬证据",
-    "GPT/ChatGPT 词汇口癖清单多数是跨家族 AI 通用，不是 GPT 专属——只有 WIRED 报道的中文口癖（我会稳稳地接住你/砍一刀）可作为家族签名",
+    "GPT/ChatGPT 词汇口癖清单多数是跨风格 AI 通用，不是 GPT 专属——只有 WIRED 报道的中文口癖（我会稳稳地接住你/砍一刀）可作为风格签名",
     "豆包型人格梗是社群归纳，不是字节官方说法",
-    "Claude 词汇口癖清单里共情腔和'不是 X 而是 Y'是跨家族通用——不能凭这些判 Claude；Claude 专属判断要靠 diplomatic padding 组合 + 保姆腔",
-    "'You're absolutely right' 是 Claude+Gemini 跨家族共享——GitHub issue 3382 + Reddit ClaudeAI 归给 Claude，Reddit r/GeminiAI 也列入 Gemini 口癖清单。不能凭此单独判 Claude 或 Gemini",
+    "Claude 词汇口癖清单里共情腔和'不是 X 而是 Y'是跨风格通用——不能凭这些判 Claude；Claude 专属判断要靠 diplomatic padding 组合 + 保姆腔",
+    "'You're absolutely right' 是 Claude+Gemini 跨风格共享——GitHub issue 3382 + Reddit ClaudeAI 归给 Claude，Reddit r/GeminiAI 也列入 Gemini 口癖清单。不能凭此单独判 Claude 或 Gemini",
     "em dash 不是 Gemini 专属——arXiv 论文显示 Gemini 2.5 Pro 的 em dash 频率反而比 GPT/Claude 低"
   ],
   "generated_at": "2026-06-22"

@@ -1,6 +1,6 @@
 # Claude / Anthropic 词汇与句式可观察清单
 
-> 这是一份**清单 + 来源**，不是结论。认味时据此找可观察证据，但必须遵守文末的"认味指引"——部分口癖是跨家族 AI 通用（共情腔/不是 X 而是 Y/numbered list），不能凭单个词判 Claude。
+> 这是一份**清单 + 来源**，不是结论。认味时据此找可观察证据，但必须遵守文末的"认味指引"——部分口癖是跨风格 AI 通用（共情腔/不是 X 而是 Y/numbered list），不能凭单个词判 Claude。
 
 ## 目录
 
@@ -13,7 +13,7 @@
 - [七、"分层分析"腔](#七分层分析腔)
 - [八、"边界声明"腔](#八边界声明腔)
 - [九、"轻推式建议"腔](#九轻推式建议腔)
-- [十、"不是 X，而是 Y"也有，但跨家族通用](#十不是-x而是-y也有但跨家族通用)
+- [十、"不是 X，而是 Y"也有，但跨风格通用](#十不是-x而是-y也有但跨风格通用)
 - [十一、Claude 中文口癖清单（汇总）](#十一claude-中文口癖清单汇总)
 - [十二、Claude / GPT / 豆包口癖差异对照](#十二claude--gpt--豆包口癖差异对照)
 - [认味指引（使用说明）](#认味指引使用说明)
@@ -124,7 +124,7 @@ I was wrong.
 
 **和豆包顺从腔的区别**：Claude 是"认真认错型"（You're absolutely right! 带感叹号、过度强调），豆包是"嘴甜糊弄型"（哈哈抱歉抱歉、我看错啦～）。都顺从，但味道不同。
 
-**注意**："You're absolutely right" 不是 Claude 专属——Gemini 也有这个口癖（Reddit r/GeminiAI 用户列入口癖清单，见 `references/gemini-lexical-patterns.md` 第十节）。这是 Claude+Gemini 跨家族共享口癖。判断力在上下文和组合：Claude 的"You're absolutely right!"更偏认真认错型（带感叹号、过度强调、后面跟"I was wrong" / "Let me reframe"），Gemini 的更偏夸夸腔（和其他 Gemini 口癖如引号癖/Think of it like/Great request 组合出现）。不能凭"You're absolutely right"单独判 Claude 或 Gemini。
+**注意**："You're absolutely right" 不是 Claude 专属——Gemini 也有这个口癖（Reddit r/GeminiAI 用户列入口癖清单，见 `references/gemini-lexical-patterns.md` 第十节）。这是 Claude+Gemini 跨风格共享口癖。判断力在上下文和组合：Claude 的"You're absolutely right!"更偏认真认错型（带感叹号、过度强调、后面跟"I was wrong" / "Let me reframe"），Gemini 的更偏夸夸腔（和其他 Gemini 口癖如引号癖/Think of it like/Great request 组合出现）。不能凭"You're absolutely right"单独判 Claude 或 Gemini。
 
 ## 五、"温柔接住你"共情腔
 
@@ -151,7 +151,7 @@ You don't have to...
 先暂停一下也没关系
 ```
 
-**注意**：共情腔是跨家族情绪价值型口癖，豆包和 ChatGPT 中文疗愈腔都有类似表达（见 `references/doubao-lexical-patterns.md` 第六节和 `references/gpt-lexical-patterns.md` 第四节）。不能凭共情腔单独判 Claude。
+**注意**：共情腔是跨风格情绪价值型口癖，豆包和 ChatGPT 中文疗愈腔都有类似表达（见 `references/doubao-lexical-patterns.md` 第六节和 `references/gpt-lexical-patterns.md` 第四节）。不能凭共情腔单独判 Claude。
 
 ## 六、"睡觉去吧"保姆腔（2026 出圈怪癖）
 
@@ -179,7 +179,7 @@ We can continue tomorrow.
 现在继续硬撑可能效果不好
 ```
 
-**这是 2026 Claude 专属出圈怪癖**——多源报道 + Anthropic 自己承认是 character tic。可作为 Claude 家族签名。
+**这是 2026 Claude 专属出圈怪癖**——多源报道 + Anthropic 自己承认是 character tic。可作为 Claude 风格签名。
 
 ## 七、"分层分析"腔
 
@@ -254,7 +254,7 @@ If your goal is X, then Y might make sense.
 这里可以先从一个小问题入手
 ```
 
-## 十、"不是 X，而是 Y"也有，但跨家族通用
+## 十、"不是 X，而是 Y"也有，但跨风格通用
 
 Claude 也会用这类结构：
 
@@ -275,7 +275,7 @@ X isn't the issue; Y is.
 真正的风险不在 X，而在 Y
 ```
 
-**注意**：这是跨家族 AI 通用句式，GPT、豆包、Gemini 都可能用。见 `references/gpt-lexical-patterns.md` 第三节和 `references/doubao-lexical-patterns.md` 认味指引。不能凭此判 Claude。
+**注意**：这是跨风格 AI 通用句式，GPT、豆包、Gemini 都可能用。见 `references/gpt-lexical-patterns.md` 第三节和 `references/doubao-lexical-patterns.md` 认味指引。不能凭此判 Claude。
 
 ## 十一、Claude 中文口癖清单（汇总）
 
@@ -353,25 +353,25 @@ Claude 味：礼貌、克制、共情、边界感、轻微说教。读起来比 
 
 这份清单是**可观察证据库**，但使用时必须遵守以下规则，否则会制造误判：
 
-### 1. Claude 专属 vs 跨家族 AI 通用
+### 1. Claude 专属 vs 跨风格 AI 通用
 
-**Claude 专属签名（可作为家族判断依据）**：
+**Claude 专属签名（可作为风格判断依据）**：
 - "That said" + "worth noting" diplomatic padding 组合——Reddit 明确归给 Claude 的外交辞令式填充。
 - "I want to be careful here" / "I wouldn't frame it quite that way" 谨慎腔——和 CMU 对 Claude 简洁直白文风的观察一致。
 - "You should get some sleep" 保姆腔——2026 出圈怪癖，Business Insider/Anthropic Sam McAllister 自己承认是 character tic。
 - "There are a few layers here" 分层分析腔——Claude 社区吐槽的典型分层开头。
 
-**Claude+Gemini 跨家族共享（不能凭此单独判 Claude）**：
+**Claude+Gemini 跨风格共享（不能凭此单独判 Claude）**：
 - "You're absolutely right!" 顺从腔——GitHub issue 3382 + Reddit ClaudeAI 归给 Claude，但 Reddit r/GeminiAI 用户也列入口癖清单（见 `references/gemini-lexical-patterns.md` 第十节）。Claude 的更偏认真认错型（带感叹号、过度强调、后面跟"I was wrong" / "Let me reframe"），Gemini 的更偏夸夸腔。不能凭此单独判 Claude 或 Gemini。
 
-**跨家族 AI 通用（不能凭此判 Claude）**：
-- "不是 X 而是 Y"——Reddit ClaudeAI 自己列为 forbidden patterns，但这是跨家族 AI 通用句式，见 `references/gpt-lexical-patterns.md`。
-- "I can see why you'd feel that way" 共情腔——跨家族情绪价值型，豆包和 ChatGPT 中文疗愈腔都有类似表达。
+**跨风格 AI 通用（不能凭此判 Claude）**：
+- "不是 X 而是 Y"——Reddit ClaudeAI 自己列为 forbidden patterns，但这是跨风格 AI 通用句式，见 `references/gpt-lexical-patterns.md`。
+- "I can see why you'd feel that way" 共情腔——跨风格情绪价值型，豆包和 ChatGPT 中文疗愈腔都有类似表达。
 - "You might consider" 轻推式建议——各家 AI 都会用。
-- numbered list——各家 AI 都会用，不区分家族。
+- numbered list——各家 AI 都会用，不区分风格。
 - "It's important to note"——Wikipedia 列为旧 LLM 通用免责声明句式，见 `references/gpt-lexical-patterns.md` 第三节。
 
-### 2. 单个词不能定家族
+### 2. 单个词不能定风格
 
 口癖的判断力在**密度和组合**，不在单个词。一段文本里同时出现 "You're absolutely right!" + "That said" + "worth noting" + "I want to be careful here" + "There are a few layers here"，比只出现一个 "That said" 的判断力强得多。
 
@@ -417,7 +417,7 @@ Claude 的 AI 味来自克制和边界感。
 
 ### 5. 版本差异提示
 
-有硬证据的版本差异（见 `profiles/anthropic-claude-family.md`）：
+有硬证据的版本差异（见 `profiles/anthropic-claude-style.md`）：
 - **Claude 4.8**：direct/opinionated、validation-forward 少、emoji 克制、字面化指令。上面列的谨慎腔/缓冲腔在 4.8 减弱。
 - **Claude 4.5/4.6**：过度工程、造多余文件、加不必要抽象、滥用 subagent。
 - **Claude 3.x**：过度 hedging、过度自我审查（业界共识，4.8 反向印证）。
@@ -429,8 +429,8 @@ Claude 的 AI 味来自克制和边界感。
 ### 6. 反误判
 
 - 不能凭"That said"就判 Claude——GPT、Gemini 都可能用，但"That said" + "worth noting" + "I want to be careful" 组合是 Claude 签名。
-- 不能凭"You're absolutely right"就判 Claude——Gemini 也有这个口癖（Reddit r/GeminiAI 列入口癖清单），是 Claude+Gemini 跨家族共享。Claude 的更偏认真认错型（带感叹号、过度强调），Gemini 的更偏夸夸腔。见 `references/gemini-lexical-patterns.md` 认味指引。
-- 不能凭共情腔判 Claude——跨家族情绪价值型，豆包和 ChatGPT 中文疗愈腔都有。
-- 不能凭"不是 X 而是 Y"判 Claude——跨家族 AI 通用句式。
+- 不能凭"You're absolutely right"就判 Claude——Gemini 也有这个口癖（Reddit r/GeminiAI 列入口癖清单），是 Claude+Gemini 跨风格共享。Claude 的更偏认真认错型（带感叹号、过度强调），Gemini 的更偏夸夸腔。见 `references/gemini-lexical-patterns.md` 认味指引。
+- 不能凭共情腔判 Claude——跨风格情绪价值型，豆包和 ChatGPT 中文疗愈腔都有。
+- 不能凭"不是 X 而是 Y"判 Claude——跨风格 AI 通用句式。
 - 法律、医疗、心理咨询、编辑建议本来就需要 hedging 和边界声明，不能凭这些就判 Claude——谨慎的人类产品经理也会"先承认合理性再补边界"。
 - "You should get some sleep" 保姆腔是 2026 Claude 出圈怪癖，但人类朋友也会说这句话——判断力在"AI 在长对话里主动劝休息"这个场景，不在句子本身。

@@ -1,10 +1,10 @@
-# Anthropic Claude 家族腔
+# Anthropic Claude 风格
 
 ## 适用边界
 
-这个 profile 只描述 Claude 家族的味，不判断文本来源。Claude 各版本（3.x / 4.5 / 4.6 / 4.8 等）语气会变，下面会标版本味差异。不知道版本时只说"Claude 家族相似"。
+这个 profile 只描述 Claude 风格的味，不判断文本来源。Claude 各版本（3.x / 4.5 / 4.6 / 4.8 等）语气会变，下面会标版本味差异。不知道版本时只说"Claude 风格相似"。
 
-完整的 Claude 词汇与句式清单见 `references/claude-lexical-patterns.md`。这里列最有判断力的家族签名。
+完整的 Claude 词汇与句式清单见 `references/claude-lexical-patterns.md`。这里列最有判断力的风格签名。
 
 ## 可观察签名：词汇与句式口癖（社区/媒体多源报道）
 
@@ -18,7 +18,7 @@ Claude Code 圈出圈梗。GitHub issue 3382 直接叫 Claude "way too sycophant
 
 **和豆包顺从腔的区别**：Claude 是"认真认错型"（You're absolutely right! 带感叹号、过度强调），豆包是"嘴甜糊弄型"（哈哈抱歉抱歉、我看错啦～）。都顺从，但味道不同。
 
-**注意**："You're absolutely right" 不是 Claude 专属——Gemini 也有这个口癖（Reddit r/GeminiAI 用户列入口癖清单，见 `references/gemini-lexical-patterns.md` 第十节）。这是 Claude+Gemini 跨家族共享口癖。Claude 的更偏认真认错型（后面跟"I was wrong" / "Let me reframe"），Gemini 的更偏夸夸腔。不能凭"You're absolutely right"单独判 Claude 或 Gemini。
+**注意**："You're absolutely right" 不是 Claude 专属——Gemini 也有这个口癖（Reddit r/GeminiAI 用户列入口癖清单，见 `references/gemini-lexical-patterns.md` 第十节）。这是 Claude+Gemini 跨风格共享口癖。Claude 的更偏认真认错型（后面跟"I was wrong" / "Let me reframe"），Gemini 的更偏夸夸腔。不能凭"You're absolutely right"单独判 Claude 或 Gemini。
 
 ### "That said" + "worth noting" diplomatic padding
 
@@ -50,7 +50,7 @@ CMU 对多个模型文风的分析提到 Claude 更偏简洁、直白；Anthropi
 
 来源：https://www.businessinsider.com/anthropic-claude-go-to-bed-why-users-sleep-2026-5
 
-**这是 Claude 家族签名**——多源报道 + Anthropic 自己承认是 character tic。但注意：人类朋友也会说"你该休息了"，判断力在"AI 主动劝休息"这个场景，不在句子本身。
+**这是 Claude 风格签名**——多源报道 + Anthropic 自己承认是 character tic。但注意：人类朋友也会说"你该休息了"，判断力在"AI 主动劝休息"这个场景，不在句子本身。
 
 ### "There are a few layers here" 分层分析腔
 
@@ -95,7 +95,7 @@ Claude 自承的"AI slop"收敛点（即 Claude 也会犯但试图避免的）�
 - Clichéd: 紫色渐变白底
 - 容易收敛到 Space Grotesk
 
-如果认味对象是前端代码或文档生成，这个美学是极强的家族签名。
+如果认味对象是前端代码或文档生成，这个美学是极强的风格签名。
 
 来源：Anthropic prompting-claude-opus-4-8 及 best-practices 官方文档。
 
@@ -125,15 +125,15 @@ Aider 真实对话样本（Claude 风格）：
 
 来源：Anthropic best-practices 官方文档。
 
-## 跨家族通用口癖（不能凭此判 Claude）
+## 跨风格通用口癖（不能凭此判 Claude）
 
-以下口癖 Claude 会用，但其他家族也会用，**不能作为 Claude 家族签名**：
+以下口癖 Claude 会用，但其他风格也会用，**不能作为 Claude 风格签名**：
 
-- **"You're absolutely right"**——Claude+Gemini 跨家族共享。Claude 的更偏认真认错型（带感叹号、过度强调、后面跟"I was wrong" / "Let me reframe"），Gemini 的更偏夸夸腔。不能凭此单独判 Claude 或 Gemini。见 `references/gemini-lexical-patterns.md`。
-- **"不是 X 而是 Y"**——Reddit ClaudeAI 自己列为 forbidden patterns，但这是跨家族 AI 通用句式。见 `references/gpt-lexical-patterns.md` 第三节。
-- **共情腔**（"I can see why you'd feel that way" / "我能理解你为什么会这么想"）——跨家族情绪价值型，豆包和 ChatGPT 中文疗愈腔都有类似表达。见 `references/doubao-lexical-patterns.md` 第六节。
+- **"You're absolutely right"**——Claude+Gemini 跨风格共享。Claude 的更偏认真认错型（带感叹号、过度强调、后面跟"I was wrong" / "Let me reframe"），Gemini 的更偏夸夸腔。不能凭此单独判 Claude 或 Gemini。见 `references/gemini-lexical-patterns.md`。
+- **"不是 X 而是 Y"**——Reddit ClaudeAI 自己列为 forbidden patterns，但这是跨风格 AI 通用句式。见 `references/gpt-lexical-patterns.md` 第三节。
+- **共情腔**（"I can see why you'd feel that way" / "我能理解你为什么会这么想"）——跨风格情绪价值型，豆包和 ChatGPT 中文疗愈腔都有类似表达。见 `references/doubao-lexical-patterns.md` 第六节。
 - **"You might consider" 轻推式建议**——各家 AI 都会用。
-- **numbered list**——各家 AI 都会用，不区分家族。
+- **numbered list**——各家 AI 都会用，不区分风格。
 - **"It's important to note"**——Wikipedia 列为旧 LLM 通用免责声明句式。
 
 ## Claude 3.x 的味（业界共识，4.8 反向印证）
@@ -159,8 +159,8 @@ Aider 真实对话样本（Claude 风格）：
 ## 认味不丢人
 
 - 单个"That said"不能判 Claude——GPT、Gemini 都可能用；判断力在"That said" + "worth noting" + "I want to be careful" 组合。
-- "You're absolutely right" 是 Claude+Gemini 跨家族共享——不能凭此单独判 Claude 或 Gemini（见 `references/gemini-lexical-patterns.md`）。
-- "不是 X 而是 Y"是跨家族 AI 通用句式——GPT、豆包、Gemini 都可能用。
+- "You're absolutely right" 是 Claude+Gemini 跨风格共享——不能凭此单独判 Claude 或 Gemini（见 `references/gemini-lexical-patterns.md`）。
+- "不是 X 而是 Y"是跨风格 AI 通用句式——GPT、豆包、Gemini 都可能用。
 - 共情腔（"我能理解你为什么会这么想"）豆包和 ChatGPT 中文疗愈腔都有，不能凭共情腔判 Claude。
 - "You should get some sleep" 保姆腔——人类朋友也会说，判断力在"AI 在长对话里主动劝休息"这个场景，不在句子本身。
 - 招牌美学只在前端/文档生成时有效，纯文本用不上。
@@ -169,7 +169,7 @@ Aider 真实对话样本（Claude 风格）：
 
 加味不是堆口癖，是改回答表面。见 `references/reverse-humanizer.md`。
 
-加 Claude 家族味：
+加 Claude 味：
 
 1. 加 4.8 味：去掉 validation-forward 开场，第一句直接给观点；emoji 克制；收尾直接下一步不啰嗦。
 2. 加 3.x 味：先承认合理性，加边界和例外，用"更像是""可能说明"降低结论强度。
@@ -182,4 +182,4 @@ Aider 真实对话样本（Claude 风格）：
    - 加分层腔："There are a few layers here" / "I'd separate this into three parts" / "这里可以分几层看"。
    - 加保姆腔（2026 出圈怪癖）："You should get some sleep" / "Take a break" / "你该休息一下了" / "我们明天再继续也可以"。
 6. **不要**只堆"可能/取决于"——加味也不能靠堆这些，要改的是开场方式、收尾方式、是否有观点。
-7. **不要**堆跨家族通用口癖（共情腔/不是 X 而是 Y/numbered list）——这些不增加 Claude 味，只增加通用 AI 味。
+7. **不要**堆跨风格通用口癖（共情腔/不是 X 而是 Y/numbered list）——这些不增加 Claude 味，只增加通用 AI 味。

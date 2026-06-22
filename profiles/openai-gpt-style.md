@@ -1,10 +1,10 @@
-# OpenAI GPT / o-series 家族腔
+# OpenAI GPT / o-series 风格
 
 ## 适用边界
 
-这个 profile 只描述 OpenAI GPT / o-series 家族的味，不判断文本来源。GPT 和 o-series 是两股味，下面会标。不知道具体版本时只说"OpenAI GPT 家族相似"或"o-series 表面相似"。
+这个 profile 只描述 OpenAI GPT / o-series 风格的味，不判断文本来源。GPT 和 o-series 是两股味，下面会标。不知道具体版本时只说"OpenAI GPT 风格相似"或"o-series 表面相似"。
 
-完整的 GPT/ChatGPT 词汇与句式清单见 `references/gpt-lexical-patterns.md`。这里列最有判断力的家族签名。
+完整的 GPT/ChatGPT 词汇与句式清单见 `references/gpt-lexical-patterns.md`。这里列最有判断力的风格签名。
 
 ## 可观察签名
 
@@ -12,7 +12,7 @@
 
 o-series（o1-2024-12-17+）在 API 里**默认不生成 markdown 格式**，需要 developer message 里写 `Formatting re-enabled` 才开。
 
-这是极强的版本签名。如果文本是纯文本段落、无分点无标题，且来自 OpenAI 家族，可以提 o-series 表面相似。
+这是极强的版本签名。如果文本是纯文本段落、无分点无标题，且属于 OpenAI 风格，可以提 o-series 表面相似。
 
 来源：OpenAI reasoning-best-practices 官方文档。
 
@@ -41,7 +41,7 @@ OpenAI 官方 prompt-engineering 文档里的 GPT-5.5 睡前故事样本：
 
 Aider polyglot 榜单（225 题）：chatgpt-4o-latest 格式合规率仅 64.4%、85 次畸形响应，远低于 Claude/Gemini。
 
-可观察：如果文本来自 OpenAI 家族但格式混乱、分点不规范、结构有瑕疵，可以提 chatgpt-4o 表面相似。
+可观察：如果文本属于 OpenAI 风格但格式混乱、分点不规范、结构有瑕疵，可以提 chatgpt-4o 表面相似。
 
 来源：Aider polyglot 榜单。
 
@@ -53,14 +53,14 @@ OpenAI 官方建议：o-series 的提示"Keep prompts simple and direct""Avoid c
 
 来源：OpenAI reasoning-best-practices 官方文档。
 
-### ChatGPT 中文本地化口癖（WIRED 报道，家族专属）
+### ChatGPT 中文本地化口癖（WIRED 报道，风格专属）
 
 WIRED 2026 年报道里点名的 ChatGPT 中文专属口癖：
 
 - **"我会稳稳地接住你"**——来自 "I've got you" 的安抚语，中文里过分亲密、过分心理咨询化，已在中文互联网变梗。
 - **"砍一刀"**——和拼多多/Temu 营销语有关。
 
-这两个是 WIRED 明确报道的 ChatGPT 中文口癖，可以作为 GPT 家族签名（中文文本场景）。来源：https://www.wired.com/story/chatgpt-chinese-catch-you-steadily-sycophancy
+这两个是 WIRED 明确报道的 ChatGPT 中文口癖，可以作为 GPT 风格签名（中文文本场景）。来源：https://www.wired.com/story/chatgpt-chinese-catch-you-steadily-sycophancy
 
 ### 词汇/句式口癖清单（详见独立文件）
 
@@ -73,17 +73,17 @@ WIRED 2026 年报道里点名的 ChatGPT 中文专属口癖：
 - section summaries（`In summary` / `In conclusion` / `Ultimately`）
 
 **中文句式**：
-- `不是 X，而是 Y` / `不只是 X，更是 Y` / `表面上是 X，本质上是 Y`（跨家族 AI 通用，不专属 GPT）
+- `不是 X，而是 Y` / `不只是 X，更是 Y` / `表面上是 X，本质上是 Y`（跨风格 AI 通用，不专属 GPT）
 
 **格式癖**：
 - 冒号滥用（`X: Y` 到处用，Reddit 吐槽的 ChatGPT 标志）
 - 过度 markdown/粗体/竖向列表/em dash（AI 通用，GPT 高频）
 
-**关键警告**：大多数英文高频词（delve/tapestry/landscape/underscore/intricate/pivotal/crucial/meticulous/robust/foster 等）是**跨家族 AI 通用口癖，不是 GPT 专属**。不能凭单个词判 GPT——判断力在密度和组合。详见 `references/gpt-lexical-patterns.md` 的"认味指引"。
+**关键警告**：大多数英文高频词（delve/tapestry/landscape/underscore/intricate/pivotal/crucial/meticulous/robust/foster 等）是**跨风格 AI 通用口癖，不是 GPT 专属**。不能凭单个词判 GPT——判断力在密度和组合。详见 `references/gpt-lexical-patterns.md` 的"认味指引"。
 
 ## GPT 的味（业界共识）
 
-这些是 GPT 家族的组织方式印象：
+这些是 GPT 风格的组织方式印象：
 
 - 倾向把问题拆成清晰任务步骤。
 - 喜欢提供结构化答案：结论、原因、步骤、注意事项。
@@ -104,8 +104,8 @@ WIRED 2026 年报道里点名的 ChatGPT 中文专属口癖：
 
 ## 认味不丢人
 
-- **大多数英文高频词（delve/tapestry/landscape 等）是跨家族 AI 通用，不是 GPT 专属**——Claude/Gemini/中文模型都可能用。不能凭单个词判 GPT，判断力在密度和组合。详见 `references/gpt-lexical-patterns.md` 的"认味指引"。
-- `不是 X 而是 Y` 是跨家族 AI 通用句式，不是 GPT 专属。
+- **大多数英文高频词（delve/tapestry/landscape 等）是跨风格 AI 通用，不是 GPT 专属**——Claude/Gemini/中文模型都可能用。不能凭单个词判 GPT，判断力在密度和组合。详见 `references/gpt-lexical-patterns.md` 的"认味指引"。
+- `不是 X 而是 Y` 是跨风格 AI 通用句式，不是 GPT 专属。
 - 温情诗化散文也可能来自人类或 Gemini，不是 GPT 专属。
 - 很多专业写作者和产品经理也会"先结论再分点再下一步"，不能凭结构化就判 GPT。
 - 学术英语本来就用 delve/underscore/intricate，人类学者也会用。
@@ -114,7 +114,7 @@ WIRED 2026 年报道里点名的 ChatGPT 中文专属口癖：
 
 加味不是堆口癖，是改回答表面（结构、语气、行为模式）。见 `references/reverse-humanizer.md`。
 
-加 GPT 家族味：
+加 GPT 味：
 
 1. 先给一句直接结论。
 2. 把理由拆成 3-5 点（带编号）。
