@@ -49,7 +49,7 @@ DeepSeek、Grok、Kimi、Qwen 等暂不做默认 profile，明确要求时可以
 ### 方式一：skills CLI（推荐）
 
 ```bash
-npx skills add realchendahuang/dahuang-ai-tone-skill -g
+npx skills add realchendahuang/dahuang-ai-tone -g
 ```
 
 `-g` 安装到全局（用户级），所有项目可用。去掉 `-g` 则只装到当前项目。安装后重启 Codex / Claude Code 即可生效。
