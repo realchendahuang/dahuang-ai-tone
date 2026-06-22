@@ -1,104 +1,127 @@
 # Dahuang AI Tone
 
-大黄 AI 腔：模型腔调风格审计 Skill。
+> 判断一段文字像 GPT、Claude、Gemini 还是豆包的腔调——靠可观察证据，不靠印象。
+
+## 这是什么
+
+`dahuang-ai-tone` 是一个 Agent Skill，给 AI 编码助手装上"模型腔调审计"能力。
 
 它做两件事：
 
-- 审计一段文字更像哪个模型家族 / 版本时代 / 产品表面。
-- 按指定模型家族或版本表面，把文字改得更像那个模型。
+1. **审计**——给定一段文本，判断它更像哪个模型家族（GPT/o-series、Claude、Gemini、豆包）的风格，能区分到版本档位和产品表面，每条判断都落到可观察证据（具体词、句式、段落组织、行为模式），而不是"感觉像"。
+2. **加味**——按指定模型家族/版本把文本改得更像那个模型，改的是结构、语气、行为模式，不是堆口癖。
 
-## 核心原则
+## 为什么需要它
 
-这是风格审计，不是模型来源鉴定。**审计必须落到可观察证据**（具体词/句式/段落组织/行为模式），不靠印象。学术上 Source Family Classification 已被证明可行（见 `references/research.md`）。
+市面上 AI 检测器大多只回答"这是不是 AI 写的"——这在学术上叫 detection，可靠性有限，改写和翻译就能绕过。
 
-可以说：
+这个 skill 做的是另一件事：**characterization**（风格表征）。不判断"是不是 AI 写的"，而是判断"如果是 AI 写的，它更像哪个家族的腔调"。学术上 Source Family Classification 已被证明可行（见 `references/research.md`）。
 
-```txt
-这段开场无 validation-forward、第一句直接给观点，符合 Claude Opus 4.8 官方自承的 direct/opinionated 风格。没有版本证据，只能说 Claude 4.8 表面相似。
+它的核心纪律：
+
+- **只能说"风格相似"，不能说"就是某模型生成"**。
+- **判断必须落到可观察证据**——具体词、句式、段落组织、行为模式，能数、能指、能引用，不靠印象。
+- **版本差异只列有硬证据的**（官方明文或量化数据），其他标推导。
+- **区分模型家族、具体版本、产品表面**——Perplexity 不是基础模型家族，是检索增强回答产品表面。
+- **主动标注跨家族通用口癖**——delve/tapestry 不是 GPT 专属，em dash 不是 Gemini 专属，"You're absolutely right" 是 Claude+Gemini 共享，不能凭单个词判家族。
+
+## 能做什么
+
+| 能力 | 说明 |
+|---|---|
+| 家族审计 | 判断文本更像 GPT/Claude/Gemini/豆包哪个家族，输出引用原文的证据报告 |
+| 版本判断 | 区分有硬证据的版本（o-series 无 markdown、Claude 4.8 direct、chatgpt-4o 格式脏、Gemini 100% 合规）和推导 |
+| 产品表面识别 | 识别 ChatGPT、Claude.ai、Perplexity 式检索回答、编程助手等产品表面 |
+| 反误判 | 主动标注翻译腔、人工模板、谨慎人类写作等误伤风险 |
+| 跨家族对比 | 量化行为数据（Aider polyglot 榜单）+ 推导对比矩阵 |
+| 加模型腔 | 按指定家族/版本改写文本，改结构不改口癖，自带"删标志词后还像不像"自检 |
+
+## 安装
+
+### 方式一：skills CLI（推荐）
+
+```bash
+npx skills add realchendahuang/dahuang-ai-tone-skill -g
 ```
 
-不能说：
+`-g` 安装到全局（用户级），所有项目可用。去掉 `-g` 则只装到当前项目。
 
-```txt
-这段就是 Claude 4.5 写的。
+安装后重启 Codex / Claude Code 即可生效。
+
+### 方式二：手动复制
+
+```bash
+# Codex
+cp -r dahuang-ai-tone ~/.codex/skills/
+
+# Claude Code
+cp -r dahuang-ai-tone ~/.claude/skills/
 ```
 
-```txt
-这段很谨慎，所以像 Claude。
+或者把本目录作为资源目录，在 system prompt 里引用 `SKILL.md` 路径。
+
+## 使用
+
+### 审计
+
+```
+Use $dahuang-ai-tone 审计下面这段文字更像哪个模型家族，注意区分版本和产品表面，证据要落到可观察形式：
+
+<贴文本>
 ```
 
-Perplexity 不能和 GPT / Claude / Gemini 直接并列成基础模型家族。更准确的说法：
+### 加味
 
-```txt
-这段像 Perplexity 式检索增强回答表面。
+```
+Use $dahuang-ai-tone 把下面这段改成 Claude Opus 4.8 风格，不要堆"可能/取决于"，要改开场和收尾的组织方式：
+
+<贴文本>
 ```
 
-## 使用方式
+### 跨家族对比
 
-这个 skill 遵循 Agent Skills 规范（https://agentskills.io/specification），可在以下宿主使用：
-
-### OpenAI Codex
-
-```txt
-Use $dahuang-ai-tone 审计下面这段文字更像哪个模型家族，注意区分版本和产品表面，证据要落到可观察形式。
+```
+Use $dahuang-ai-tone 对比下面两段文字的模型腔调差异，说明它们分别像哪个家族：
 ```
 
-### Anthropic Claude Code
+## 内置模型家族
 
-```txt
-Use $dahuang-ai-tone 把下面这段改成 Claude Opus 4.8 风格，不要堆"可能/取决于"，要改开场和收尾的组织方式。
-```
+| 家族 | Profile | 词汇句式清单 |
+|---|---|---|
+| OpenAI GPT / o-series | `profiles/openai-gpt-family.md` | `references/gpt-lexical-patterns.md` |
+| Anthropic Claude | `profiles/anthropic-claude-family.md` | `references/claude-lexical-patterns.md` |
+| Google Gemini | `profiles/google-gemini-family.md` | `references/gemini-lexical-patterns.md` |
+| 字节豆包 / Doubao | `profiles/bytedance-doubao-family.md` | `references/doubao-lexical-patterns.md` |
 
-### 其他兼容 Agent Skills 的工具
+DeepSeek、Grok、Kimi、Qwen 等暂不做默认 profile，用户明确要求时临时扩展。
 
-把本 skill 目录作为资源根，`SKILL.md` 是入口，其他文件按需读取。
+## 诚实声明
 
-## 当前内置核心模型家族
+这个 skill 不是万能的，以下空白如实告知：
 
-- OpenAI GPT / o-series
-- Anthropic Claude
-- Google Gemini
-- 字节豆包 / Doubao
-
-## 当前已知空白
-
-诚实记录，不掩饰：
-
-1. 缺同一 prompt 跨四家真实对比样本——"同义不同写"的对比都是推导。
-2. Gemini 官方文档 fetch 被墙，纯文本散文真实样本缺失——但 Gemini 现在有社区/媒体/学术多源报道的口癖证据（Reddit/Scientific American/TechRadar/arXiv）。
-3. 豆包专属硬特征缺失——豆包 profile 用 DeepSeek/Qwen/Kimi 作中文模型代理。
-4. 多数版本差异是推导——只有 `references/model-version-policy.md` 列的几条有硬证据。
+1. **缺同一 prompt 跨四家真实对比样本**——"同义不同写"的对比都是推导。
+2. **Gemini 官方文档 fetch 被墙**，纯文本散文真实样本缺失（有社区/媒体/学术多源口癖证据补足）。
+3. **豆包专属硬特征缺失**——用 DeepSeek/Qwen/Kimi 作中文模型代理，只能给"中文模型共相"。
+4. **多数版本差异是推导**——只有 `references/model-version-policy.md` 列的几条有硬证据。
 
 详细空白说明见 `references/research.md`。
 
-## 参考
+## 仓库结构
 
-- OpenAI models: https://developers.openai.com/api/docs/models
-- OpenAI reasoning best practices: https://platform.openai.com/docs/guides/reasoning-best-practices
-- Anthropic Claude models: https://platform.claude.com/docs/en/about-claude/models/overview
-- Anthropic prompting Claude Opus 4.8: https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/prompting-claude-opus-4-8
-- Google Gemini models: https://ai.google.dev/gemini-api/docs/models
-- 火山方舟模型列表: https://www.volcengine.com/docs/82379/1330310
-- Perplexity Sonar models: https://docs.perplexity.ai/docs/sonar/models
-- Aider polyglot 榜单: https://aider.chat/docs/leaderboards/
-- A Survey of AI-generated Text Forensic Systems: https://arxiv.org/abs/2403.01152
-- GPT detectors biased against non-native writers: https://arxiv.org/html/2304.02819
-- Delving into LLM-assisted writing (Kobak et al.): https://arxiv.org/abs/2406.07016
-- Why Does ChatGPT "Delve" So Much? (Juzek & Ward): https://arxiv.org/abs/2412.11385
-- Wikipedia:Signs of AI writing: https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing
-- WIRED: ChatGPT Chinese "catch you steadily": https://www.wired.com/story/chatgpt-chinese-catch-you-steadily-sycophancy
-- 科学网：为什么 AI 写的文章总有 AI 味: https://news.sciencenet.cn/htmlnews/2025/10/553334.shtm
-- 果壳：最惹不起的顶配人设：豆包型人格: https://m.guokr.com/article/469153
-- 新浪财经：豆包"讨好型人格"引争议: https://finance.sina.com.cn/stock/marketresearch/2026-05-14/doc-inhxwenm3966826.shtml
-- 36氪转载新浪：消除"罪证"给写作去除 AI 味: https://finance.sina.cn/stock/jdts/2026-05-25/detail-inhzchzh3494487.d.html
-- 虎嗅：ChatGPT 别再"稳稳接住我"了: https://www.huxiu.com/article/4856655.html
-- Reddit ClaudeAI: I see Claude's writing everywhere: https://www.reddit.com/r/ClaudeAI/comments/1rjeqg3/i_see_claudes_writing_everywhere_and_its_starting/
-- Business Insider：Anthropic's Claude Is Telling Users to 'Go to Bed': https://www.businessinsider.com/anthropic-claude-go-to-bed-why-users-sleep-2026-5
-- CMU：LLM Distinctive Styles: https://www.cs.cmu.edu/news/2025/llm-distinctive-styles
-- Reddit GeminiAI: Massive overuse of quotation marks: https://www.reddit.com/r/GeminiAI/comments/1qa2foq/massive_overuse_of_quotation_marks_for_certain/
-- Scientific American：ChatGPT and Gemini AIs Have Uniquely Different Writing Styles: https://www.scientificamerican.com/article/chatgpt-and-gemini-ai-have-uniquely-different-writing-styles/
-- arXiv：The Last Fingerprint: How Markdown Training Shapes LLM Prose: https://arxiv.org/html/2603.27006v1
-- 完整 GPT 词汇口癖来源清单见 `references/gpt-lexical-patterns.md` 和 `references/research.md`
-- 完整 Claude 词汇口癖来源清单见 `references/claude-lexical-patterns.md` 和 `references/research.md`
-- 完整 Gemini 词汇口癖来源清单见 `references/gemini-lexical-patterns.md` 和 `references/research.md`
-- 完整豆包体口癖来源清单见 `references/doubao-lexical-patterns.md` 和 `references/research.md`
+```
+dahuang-ai-tone/
+├── SKILL.md                  # 入口：路由 + 硬边界 + 工作流
+├── references/               # 按需加载的详细文档
+│   ├── model-version-policy.md
+│   ├── audit-workflow.md
+│   ├── taxonomy.md
+│   ├── anti-misjudgment.md
+│   ├── report-schema.md
+│   ├── reverse-humanizer.md
+│   ├── evaluation.md
+│   ├── research.md
+│   └── *-lexical-patterns.md
+├── profiles/                 # 模型家族 profile
+├── examples/                 # 示范报告
+└── agents/openai.yaml        # UI 元数据
+```

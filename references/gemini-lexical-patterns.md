@@ -2,6 +2,22 @@
 
 > 这是一份**清单 + 来源**，不是结论。审计员据此找可观察证据，但必须遵守文末的"审计指引"——部分口癖是跨家族 AI 通用（em dash / "You're absolutely right" / "不是 X 而是 Y" / 过度列表），不能凭单个词判 Gemini。
 
+## 目录
+
+- [一、引号癖（Gemini 最强专属签名）](#一引号癖gemini-最强专属签名)
+- [二、"Great request!" 夸夸开头（热情客服腔）](#二great-request-夸夸开头热情客服腔)
+- [三、Redditor 腔：热情网友，不像百科全书](#三redditor-腔热情网友不像百科全书)
+- [四、"Think of it like…" 类比狂魔](#四think-of-it-like-类比狂魔)
+- [五、"You're not just doing X; you're doing Y" 结构重复](#五youre-not-just-doing-x-youre-doing-y-结构重复)
+- [六、简单化、解释型、比 ChatGPT 更口语](#六简单化解释型比-chatgpt-更口语)
+- [七、格式化展示欲：列表、粗体、小标题](#七格式化展示欲列表粗体小标题)
+- [The Core Shift](#the-core-shift)
+- [八、破折号：有这个味，但不是 Gemini 专属](#八破折号有这个味但不是-gemini-专属)
+- [九、更像人，但也更难抓](#九更像人但也更难抓)
+- [十、Gemini 口癖清单（汇总）](#十gemini-口癖清单汇总)
+- [十一、Gemini / GPT / Claude / 豆包口癖差异对照](#十一gemini--gpt--claude--豆包口癖差异对照)
+- [审计指引（使用说明）](#审计指引使用说明)
+
 ## 一、引号癖（Gemini 最强专属签名）
 
 公开社区里最常被点名的 Gemini 口癖之一，是**在不需要的词周围疯狂加引号**：

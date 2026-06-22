@@ -12,6 +12,7 @@ resources:
     - references/model-version-policy.md
     - references/audit-workflow.md
     - references/taxonomy.md
+    - references/anti-misjudgment.md
     - references/gpt-lexical-patterns.md
     - references/claude-lexical-patterns.md
     - references/gemini-lexical-patterns.md

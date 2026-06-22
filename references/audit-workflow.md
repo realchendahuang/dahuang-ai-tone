@@ -21,11 +21,13 @@
 - hedging 词的密度和类型（"可能/取决于/需要看/不过/但其实"）
 - 连接词习惯（"因此/所以/然而/另外"的密度和位置）
 - 标志性短语（见各家族 profile 的"可观察签名"）
-- **AI 腔高频词**：delve / tapestry / landscape / underscore / intricate / pivotal / crucial / meticulous / robust 等——完整清单见 `references/gpt-lexical-patterns.md`。**注意：这些是跨家族 AI 通用口癖，不是 GPT 专属**，判断力在密度和组合。
+- **AI 腔高频词**：delve / tapestry / landscape / underscore / intricate / pivotal / crucial / meticulous / robust 等——完整清单见 `references/gpt-lexical-patterns.md`。
 - **中文官话腔/结构词/正确废话**：此外/值得注意的是/首先…其次…最后…/这为我们提供了一个重新审视 X 的契机——完整清单见 `references/gpt-lexical-patterns.md`。
-- **豆包体口癖**：我太懂你这种感觉了！！/ 最直接最真相最不绕弯最扎心 / 哈哈抱歉抱歉 / 你说得对 / 我看错啦 / 没错没错 / 我重新给你梳理一下——完整清单见 `references/doubao-lexical-patterns.md`。**注意：单个"我懂你"或"你说得对"跨家族通用，豆包专属判断要靠"我太懂你+最X连发+哈哈道歉"组合**。
-- **Claude 体口癖**：That said / worth noting / I want to be careful here / There are a few layers here / You should get some sleep（2026 保姆腔出圈怪癖）——完整清单见 `references/claude-lexical-patterns.md`。**注意：单个"That said"或共情腔跨家族通用，Claude 专属判断要靠"That said + worth noting + I want to be careful" diplomatic padding 组合**。Claude 顺从腔（You're absolutely right! 认真认错型）和豆包顺从腔（哈哈抱歉抱歉 嘴甜糊弄型）味道不同。"You're absolutely right" 是 Claude+Gemini 跨家族共享，不能凭此单独判 Claude 或 Gemini。
-- **Gemini 体口癖**：引号癖（在不需要的词周围疯狂加引号）/ Great request! 夸夸开头 / Think of it like this: 类比开头 / The [X] Issue 小标题包装 / Go ahead, you earned it. 鼓励式结尾 / NO, DO NOT DO THIS! 强硬推荐 / Redditor 腔——完整清单见 `references/gemini-lexical-patterns.md`。**注意：em dash 不是 Gemini 专属**（arXiv 论文显示 Gemini 2.5 Pro 的 em dash 频率反而比 GPT/Claude 低），过度列表/过度粗体也不区分家族。Gemini 专属判断要靠引号癖+夸夸开头+类比开头+小标题包装组合。
+- **豆包体口癖**：我太懂你这种感觉了！！/ 最直接最真相最不绕弯最扎心 / 哈哈抱歉抱歉——完整清单见 `references/doubao-lexical-patterns.md`。
+- **Claude 体口癖**：That said / worth noting / I want to be careful here / There are a few layers here / You should get some sleep——完整清单见 `references/claude-lexical-patterns.md`。
+- **Gemini 体口癖**：引号癖 / Great request! / Think of it like this: / The [X] Issue 小标题包装——完整清单见 `references/gemini-lexical-patterns.md`。
+
+**关键**：以上口癖哪些是跨家族通用、哪些是家族专属、判断力在组合还是单个词——完整反误判规则见 `references/anti-misjudgment.md`。不要凭单个词判家族。
 
 ### 句式层（比单词更有判断力）
 

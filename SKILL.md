@@ -1,6 +1,6 @@
 ---
 name: dahuang-ai-tone
-description: "AI 主导的核心模型腔调风格审计与模型腔生成 Skill，聚焦 GPT/o-series、Claude、Gemini、豆包/Doubao。Use when the user asks whether text resembles GPT, Claude, Gemini, Doubao, or a specific model/version style; compare model-family/version style similarity; explain where a text feels AI-written. The audit must be close-reading based, evidence-grounded (observable forms, not impressions), version-aware, and must not treat products like Perplexity as foundation model families unless an explicit API model such as Sonar is provided."
+description: "模型腔调风格审计与模型腔生成。判断文本更像 GPT/o-series、Claude、Gemini、豆包哪个家族的腔调，能区分版本档位和产品表面，靠可观察证据不靠印象。Use when the user asks whether text resembles GPT, Claude, Gemini, Doubao, or a specific model/version style; compare model-family/version style similarity; explain where a text feels AI-written; or rewrite text in a specific model family's style (加味/改成 X 腔)."
 ---
 
 # Dahuang AI Tone
@@ -18,6 +18,7 @@ description: "AI 主导的核心模型腔调风格审计与模型腔生成 Skill
 - 不要用脚本、词频、关键词列表替代审计判断——但"可观察证据"不等于"印象"，要能数能指能引用。
 - 不要输出伪精确百分比；默认用高/中/低和证据解释。
 - 版本差异只列有硬证据的（官方明文或量化数据），其他标推导——见 `references/model-version-policy.md`。
+- **跨家族通用口癖不能单独判家族**——delve/tapestry 不是 GPT 专属、em dash 不是 Gemini 专属、"You're absolutely right" 是 Claude+Gemini 共享、共情腔不区分家族。完整反误判清单见 `references/anti-misjudgment.md`。
 
 ## 宿主兼容
 
@@ -36,11 +37,12 @@ description: "AI 主导的核心模型腔调风格审计与模型腔生成 Skill
 1. 先读 `references/model-version-policy.md`，确认模型家族/版本/产品表面的三层边界，以及哪些版本差异有硬证据。
 2. 完整读文本，判断它是聊天回答、代码解释、搜索回答、长文总结、办公写作、产品助手回复，还是其他产品表面。
 3. 读取 `references/audit-workflow.md`（五遍阅读法 + 可观察证据类型）和 `references/taxonomy.md`（审计维度）。
-4. 选择相关模型家族 profile。只读取需要比较的 profile，避免把所有 profile 塞进上下文。
-5. 按文本顺序引用证据，**每条证据落到可观察形式**（具体词/句式/段落组织/行为模式），说明它像在哪里——要能指向 profile 里的具体签名或官方/量化数据。
-6. 明确写版本不确定性：区分"有硬证据"和"推导"。不知道具体版本时，只能给家族级相似判断。
-7. 翻译腔重的文本要特别处理——翻译腔和 AI 腔学术上同源，不区分家族，要降低置信度。见 `references/taxonomy.md` 的"中文化方式"。
-8. 按 `references/report-schema.md` 输出报告。
+4. 读 `references/anti-misjudgment.md`（跨家族通用口癖 + 反误判清单），避免循环论证。
+5. 选择相关模型家族 profile。只读取需要比较的 profile，避免把所有 profile 塞进上下文。
+6. 按文本顺序引用证据，**每条证据落到可观察形式**（具体词/句式/段落组织/行为模式），说明它像在哪里——要能指向 profile 里的具体签名或官方/量化数据。
+7. 明确写版本不确定性：区分"有硬证据"和"推导"。不知道具体版本时，只能给家族级相似判断。
+8. 翻译腔重的文本要特别处理——翻译腔和 AI 腔学术上同源，不区分家族，要降低置信度。见 `references/taxonomy.md` 的"中文化方式"。
+9. 按 `references/report-schema.md` 输出报告。
 
 ## 核心模型家族
 
@@ -55,17 +57,7 @@ DeepSeek、Grok、Kimi、Qwen 等暂不做默认 profile。用户明确要求时
 
 ## 版本意识
 
-不要把"GPT 腔""Claude 腔"说成一个固定东西。版本差异**只列有硬证据的**：
-
-- o-series（o1-2024-12-17+）默认不输出 markdown（OpenAI 官方）。
-- Claude 4.8：direct/opinionated、minimal validation-forward、sparing emoji、字面化指令、招牌美学（Anthropic 官方）。
-- Claude 4.5/4.6：过度工程、造多余文件、滥用 subagent（Anthropic 官方自承）。
-- chatgpt-4o-latest 格式合规率 64.4%（Aider 量化数据）。
-- Gemini 2.5 Pro 格式合规 ~100%（Aider 量化数据）。
-- DeepSeek R1 architect 澄清提问 392 次（Aider 量化数据）。
-- GPT-4/4o/5 时代高频词变迁（Wikipedia 社群整理，半硬证据）：GPT-4 时代词表广（delve/tapestry/testament 等），GPT-5 时代收缩到（emphasizing/enhance/highlighting/showcasing）。完整词表见 `references/gpt-lexical-patterns.md` 第八节。
-
-完整列表见 `references/model-version-policy.md`。没有硬证据或半硬证据的版本差异（如"GPT-4o 更口语、GPT-5.x 更偏推理"）不要当结论。
+不要把"GPT 腔""Claude 腔"说成一个固定东西。版本差异**只列有硬证据的**，完整列表见 `references/model-version-policy.md`。没有硬证据的版本差异（如"GPT-4o 更口语、GPT-5.x 更偏推理"）不要当结论。
 
 如果文本没有版本信息，报告里要写：
 
@@ -112,20 +104,16 @@ DeepSeek、Grok、Kimi、Qwen 等暂不做默认 profile。用户明确要求时
 这段结构清楚，所以像 GPT。
 ```
 
-## 当前已知空白（诚实声明）
+## 已知空白
 
-这个 skill 不是万能的，以下空白要诚实告诉用户：
-
-1. **缺同一 prompt 跨四家真实对比样本**——所有"同义不同写"的对比都是推导，不是真实输出。建议用 LMSYS 采集或自建 prompt 跑 API。
-2. **Gemini 官方文档 fetch 被墙**，纯文本散文真实样本缺失——但 Gemini 现在有社区/媒体/学术多源报道的口癖证据（Reddit/Scientific American/TechRadar/arXiv），不再是纯推导。
-3. **豆包专属硬特征缺失**——豆包 profile 用 DeepSeek/Qwen/Kimi 作中文模型代理，只能给"中文模型共相"。
-4. **多数版本差异是推导**——只有 `references/model-version-policy.md` 列的几条有硬证据。
+这个 skill 不是万能的，空白清单见 `references/research.md` 的"当前已知空白"。审计时如遇到这些空白，要诚实告诉用户。
 
 ## 资源说明
 
 - `references/model-version-policy.md`：模型家族、版本、产品表面边界 + Perplexity 议题唯一真源 + 版本硬证据/半硬证据列表。
 - `references/audit-workflow.md`：AI 主导的审计流程 + 可观察证据类型 + 五遍阅读法。
 - `references/taxonomy.md`：模型腔调分类和可观察审计维度。
+- `references/anti-misjudgment.md`：跨家族通用口癖 + 反误判清单唯一真源。
 - `references/gpt-lexical-patterns.md`：GPT/ChatGPT 词汇与句式可观察清单（英文高频词/句式/中文口癖/格式癖/时代词汇变迁 + 审计指引）。
 - `references/claude-lexical-patterns.md`：Claude 词汇与句式可观察清单（diplomatic padding/谨慎腔/顺从腔/保姆腔/分层腔/共情腔 + 审计指引）。
 - `references/gemini-lexical-patterns.md`：Gemini 词汇与句式可观察清单（引号癖/夸夸开头/类比狂魔/小标题包装/Redditor 腔/em dash 量化 + 审计指引）。

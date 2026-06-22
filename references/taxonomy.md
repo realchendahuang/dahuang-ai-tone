@@ -58,19 +58,18 @@ Claude 3.x 偏高，Claude 4.8 官方说低，GPT 中等偏礼貌，Gemini 偏�
 
 ### 词汇层（AI 腔口癖）
 
-完整的 GPT/ChatGPT 词汇与句式清单见 `references/gpt-lexical-patterns.md`。审计时找以下可观察证据：
+完整的各家族词汇与句式清单见 `references/*-lexical-patterns.md`。审计时找以下可观察证据：
 
-- **英文高频词**：delve / tapestry / landscape / underscore / intricate / pivotal / crucial / meticulous / robust / foster / garner / highlight / emphasize / showcase / bolster / enduring / interplay / valuable / vibrant 等。**注意：这些是跨家族 AI 通用口癖，不是 GPT 专属**——判断力在密度和组合，不在单个词。
-- **英文句式**：`not only... but also...` / `not X, but Y`（Negative parallelisms）/ rule of three / didactic disclaimers（`It's important to note that...`）/ section summaries（`In summary` / `In conclusion` / `Ultimately`）。句式比单词更有判断力。
-- **中文句式**：`不是 X，而是 Y` / `不只是 X，更是 Y` / `表面上是 X，本质上是 Y` / `这背后反映的是 X` / `这件事的核心在于 X`。跨家族 AI 通用。
-- **中文官话腔**：此外 / 而且 / 值得注意的是 / 需要注意的是 / 从某种意义上说 / 进一步来看 / 整体来看 / 总的来说 / 归根结底 / 本质上 / 核心在于 / 关键在于 / 值得一提的是 / 不可忽视的是。
-- **中文结构词**：首先 / 其次 / 最后 / 第一/第二/第三 / 一方面/另一方面 / 与此同时 / 此外 / 因此 / 由此可见 / 综上所述 / 总而言之。
-- **中文"正确废话"**：这为我们提供了一个重新审视 X 的契机 / 这不仅提升了效率，也降低了门槛 / 这有助于构建更加完善的 X 体系 / 这体现了 X 在 Y 场景下的重要价值 / 这将进一步推动 X 的发展 / 这背后是 X、Y、Z 多重因素共同作用的结果。
+- **英文高频词**：delve / tapestry / landscape / underscore / intricate / pivotal / crucial / meticulous / robust / foster / garner / highlight / emphasize / showcase 等。完整清单见 `references/gpt-lexical-patterns.md`。
+- **英文句式**：`not only... but also...` / `not X, but Y` / rule of three / didactic disclaimers / section summaries。句式比单词更有判断力。
+- **中文句式**：`不是 X，而是 Y` / `不只是 X，更是 Y` / `表面上是 X，本质上是 Y` / `这背后反映的是 X` / `这件事的核心在于 X`。
+- **中文官话腔/结构词/正确废话**：此外/值得注意的是/首先…其次…最后…/这为我们提供了一个重新审视 X 的契机。完整清单见 `references/gpt-lexical-patterns.md`。
 - **ChatGPT 中文本地化口癖（WIRED 报道，家族专属）**：我会稳稳地接住你 / 砍一刀。
-- **豆包体口癖（社群/媒体多源报道，豆包专属）**：我太懂你这种感觉了！！/ 最直接最真相最不绕弯最扎心 / 哈哈抱歉抱歉 / 你说得对是我这边理解偏了 / 我重新给你梳理一下。完整清单见 `references/doubao-lexical-patterns.md`。**判断力在组合**——"我太懂你+最X连发+哈哈道歉"组合才是豆包签名，单个"我懂你"或"你说得对"跨家族通用。
-- **Claude 体口癖（社区/媒体多源报道，Claude 专属）**：That said / worth noting / I want to be careful here / There are a few layers here / You should get some sleep（2026 保姆腔出圈怪癖）。完整清单见 `references/claude-lexical-patterns.md`。**判断力在组合**——"That said + worth noting + I want to be careful" diplomatic padding 组合才是 Claude 签名，单个"That said"跨家族通用。Claude 顺从腔（You're absolutely right! 认真认错型）和豆包顺从腔（哈哈抱歉抱歉 嘴甜糊弄型）味道不同。
-- **Gemini 体口癖（社区/媒体/学术多源报道，Gemini 专属）**：引号癖（在不需要的词周围疯狂加引号）/ Great request! 夸夸开头 / Think of it like this: 类比狂魔 / The [X] Issue 小标题包装 / Go ahead, you earned it. 鼓励式结尾 / NO, DO NOT DO THIS! 强硬推荐 / Redditor 腔（pun/生造词/游戏类比/车类比）。完整清单见 `references/gemini-lexical-patterns.md`。**判断力在组合**——引号癖+夸夸开头+类比开头+小标题包装组合才是 Gemini 签名，单个"Think of it like"或"这是一个很好的问题"跨家族通用。
-- **Claude+Gemini 跨家族共享口癖**："You're absolutely right" 顺从腔——GitHub issue 3382 + Reddit ClaudeAI 归给 Claude，Reddit r/GeminiAI 也列入口癖清单。Claude 的更偏认真认错型（带感叹号、过度强调、后面跟"I was wrong" / "Let me reframe"），Gemini 的更偏夸夸腔。不能凭此单独判 Claude 或 Gemini。
+- **豆包体口癖（豆包专属）**：我太懂你这种感觉了！！/ 最X 连发 / 哈哈抱歉抱歉。完整清单见 `references/doubao-lexical-patterns.md`。
+- **Claude 体口癖（Claude 专属）**：That said / worth noting / I want to be careful here / There are a few layers here / You should get some sleep。完整清单见 `references/claude-lexical-patterns.md`。
+- **Gemini 体口癖（Gemini 专属）**：引号癖 / Great request! / Think of it like this: / The [X] Issue 小标题包装 / Redditor 腔。完整清单见 `references/gemini-lexical-patterns.md`。
+
+**关键**：以上口癖哪些是跨家族通用、哪些是家族专属、判断力在组合还是单个词——完整反误判规则见 `references/anti-misjudgment.md`。不要凭单个词或单个句式判家族。
 
 ### 推理呈现
 
@@ -98,43 +97,16 @@ Claude 3.x 偏高，Claude 4.8 官方说低，GPT 中等偏礼貌，Gemini 偏�
 
 ### 中文化方式（翻译腔 vs 母语腔）
 
-学术上翻译腔和 AI 腔**同源**：都表现为低 perplexity、低词汇多样性、低句法复杂度（见 `references/research.md`）。非母语英文写作被 AI 检测器误判就是这个原因。
-
-中文翻译腔的可观察标志：
-
-- 高频通用动词：进行/实现/促进/推动/开展
-- 抽象名词化：...化/...性/...的进行
-- 欧化长定语："基于...的...的...的"结构
-- 连接词冗余：因此/所以/然而密集
-- 被动句过多
-
-审计时如果文本全是翻译腔特征，要降低"某模型家族"的置信度——因为这可能是任何模型经中文翻译或非母语输出的结果，不是某家族专属。
+翻译腔和 AI 腔学术上**同源**（低 perplexity/低多样性/低复杂度），不区分家族。审计时如果文本翻译腔重，要降低家族置信度。完整可观察标志和误判处理见 `references/anti-misjudgment.md` 的"翻译腔 vs AI 腔"。
 
 ## 常见误判
 
+完整反误判清单见 `references/anti-misjudgment.md`（唯一真源）。这里只列审计时最容易犯的几条：
+
 - 把 Perplexity 当基础模型家族（见 `references/model-version-policy.md`）。
 - 把"有引用"当成某个模型，而不是搜索产品表面。
-- 把"hedging 多"直接当 Claude——Claude 4.8 官方说 hedging 少；谨慎的人类也会 hedging。
-- 把"三段式"直接当 GPT——任何模型都可能三段式。
-- 把"中文顺滑"直接当豆包——Kimi/Qwen/DeepSeek 都可能。
-- **看到"我懂你"或"你说得对"就判豆包**——情绪价值型口癖和顺从型口癖跨家族通用，其他中文情感型 AI、ChatGPT 中文疗愈腔、人类客服都可能有。豆包专属判断要靠"我太懂你+最X连发+哈哈道歉"组合。见 `references/doubao-lexical-patterns.md` 的"审计指引"。
-- **看到"稳稳接住你"就判豆包**——虎嗅明确归给 ChatGPT 中文疗愈腔，同时说"这一年几乎所有大模型都在用类似温柔、共情、滴水不漏的方式说话"。这是跨家族中文 AI 通用，不是豆包专属。
-- **把豆包型人格梗当字节官方特征**——果壳/搜狐的"豆包型人格"是社群归纳，审计报告里要标"社群观察/媒体归纳"，不要写成官方特征。
-- **看到"You're absolutely right!"就判 Claude**——这是 Claude Code 圈出圈梗（GitHub issue 3382 + Reddit），但 Reddit r/GeminiAI 用户也列入 Gemini 口癖清单。是 Claude+Gemini 跨家族共享。Claude 的更偏认真认错型（带感叹号、过度强调、后面跟"I was wrong" / "Let me reframe"），Gemini 的更偏夸夸腔。不能凭此单独判 Claude 或 Gemini。还要区分豆包顺从腔（哈哈抱歉抱歉 嘴甜糊弄型）。见 `references/gemini-lexical-patterns.md` 审计指引。
-- **看到"That said"就判 Claude**——单个"That said"跨家族通用，GPT/Gemini 都可能用；判断力在"That said + worth noting + I want to be careful" diplomatic padding 组合。见 `references/claude-lexical-patterns.md` 的"审计指引"。
-- **看到共情腔（"I can see why you'd feel that way" / "我能理解你为什么会这么想"）就判 Claude**——共情腔是跨家族情绪价值型，豆包和 ChatGPT 中文疗愈腔都有类似表达。不能凭共情腔单独判 Claude。
-- **把"不是 X 而是 Y"判 Claude**——Reddit ClaudeAI 自己列为 forbidden patterns，但这是跨家族 AI 通用句式，GPT/豆包/Gemini 都可能用。不能凭此判 Claude。
-- **把"劝休息/劝睡觉"当 Claude 独有**——"You should get some sleep" 保姆腔是 2026 Claude 出圈怪癖（Business Insider + Anthropic Sam McAllister 承认是 character tic），但人类朋友也会说"你该休息了"。判断力在"AI 在长对话里主动劝休息"这个场景，不在句子本身。
-- **看到 em dash（破折号）就判 Gemini**——arXiv 论文显示 Gemini 2.5 Pro 的 em dash 频率（3.53/1000 词）反而比 GPT-4.1、Claude Opus、Claude Sonnet、DeepSeek 低，在"只写自然段"约束下降到 0。em dash 是跨家族 AI 通用特征，不区分家族。见 `references/gemini-lexical-patterns.md` 第八节。
-- **看到"过度列表/过度粗体"就判 Gemini**——各家 AI 都会用，不区分家族。
-- **看到"这是一个很好的问题"就判 Gemini**——跨家族中文 AI 通用，所有中文模型都可能用。
-- **看到"You're not just doing X; you're doing Y"就判 Gemini**——和 GPT 的"不是 X 而是 Y"/"不只是 X，更是 Y"高度相似，是跨家族 AI 通用上价值句式。
-- **看到"规整/教育式/知识卡片化"就判 Gemini**——说明文、知识库、教学内容本来就接近这种结构。Aider 数据显示 Gemini 格式合规 ~100%，但格式合规也可能是产品表面或人工排版的结果。
+- 凭单个词/单个句式判家族——判断力在密度和组合。
 - 把翻译腔当某模型家族专属——翻译腔和 AI 腔学术上同源，不区分家族。
-- 看到"可能/取决于"就判 Claude（audit-workflow 反复批评的，reverse-humanizer 也不能堆这些）。
-- **看到 delve/tapestry/landscape/underscore 就判 GPT**——这些是跨家族 AI 通用口癖，Claude/Gemini/中文模型都可能用。判断力在密度和组合，不在单个词。详见 `references/gpt-lexical-patterns.md` 的"审计指引"。
-- **看到"不是 X 而是 Y"就判 GPT**——这是跨家族 AI 通用句式，中文模型、Claude、Gemini 都可能用。
-- 学术英语本来就用 delve/underscore/intricate，人类学者也会用，不能凭这些词判 AI。
 
 ## 辅助内容腔
 
