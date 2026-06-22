@@ -2,13 +2,11 @@
 
 ## 适用边界
 
-这个 profile 只描述 Claude 家族的风格相似性。Claude Opus、Sonnet、Haiku，以及 3.x、3.5、4.x、4.5、4.6、4.8 等版本的能力和语气会变；不能把"像 Claude"当来源鉴定。
+这个 profile 只描述 Claude 家族的味，不判断文本来源。Claude 各版本（3.x / 4.5 / 4.6 / 4.8 等）语气会变，下面会标版本味差异。不知道版本时只说"Claude 家族相似"。
 
-如果不知道版本，只能写"Claude 家族相似"。如果文本明显是高复杂推理长文，可再说"更接近 Sonnet/Opus 这类中高阶 Claude 的回答表面"，但要标低置信度。
+完整的 Claude 词汇与句式清单见 `references/claude-lexical-patterns.md`。这里列最有判断力的家族签名。
 
 ## 可观察签名：词汇与句式口癖（社区/媒体多源报道）
-
-完整的 Claude 词汇与句式清单见 `references/claude-lexical-patterns.md`。这里列最有判断力的家族签名：
 
 ### "You're absolutely right!" 顺从腔
 
@@ -97,7 +95,7 @@ Claude 自承的"AI slop"收敛点（即 Claude 也会犯但试图避免的）�
 - Clichéd: 紫色渐变白底
 - 容易收敛到 Space Grotesk
 
-如果审计对象是前端代码或文档生成，这个美学是极强的家族签名。
+如果认味对象是前端代码或文档生成，这个美学是极强的家族签名。
 
 来源：Anthropic prompting-claude-opus-4-8 及 best-practices 官方文档。
 
@@ -131,14 +129,14 @@ Aider 真实对话样本（Claude 风格）：
 
 以下口癖 Claude 会用，但其他家族也会用，**不能作为 Claude 家族签名**：
 
-- **"You're absolutely right"**——Claude+Gemini 跨家族共享。Claude 的更偏认真认错型（带感叹号、过度强调、后面跟"I was wrong" / "Let me reframe"），Gemini 的更偏夸夸腔。不能凭此单独判 Claude 或 Gemini。见 `references/gemini-lexical-patterns.md` 审计指引。
+- **"You're absolutely right"**——Claude+Gemini 跨家族共享。Claude 的更偏认真认错型（带感叹号、过度强调、后面跟"I was wrong" / "Let me reframe"），Gemini 的更偏夸夸腔。不能凭此单独判 Claude 或 Gemini。见 `references/gemini-lexical-patterns.md`。
 - **"不是 X 而是 Y"**——Reddit ClaudeAI 自己列为 forbidden patterns，但这是跨家族 AI 通用句式。见 `references/gpt-lexical-patterns.md` 第三节。
 - **共情腔**（"I can see why you'd feel that way" / "我能理解你为什么会这么想"）——跨家族情绪价值型，豆包和 ChatGPT 中文疗愈腔都有类似表达。见 `references/doubao-lexical-patterns.md` 第六节。
 - **"You might consider" 轻推式建议**——各家 AI 都会用。
 - **numbered list**——各家 AI 都会用，不区分家族。
 - **"It's important to note"**——Wikipedia 列为旧 LLM 通用免责声明句式。
 
-## 推导特征（业界共识，4.8 反向印证）
+## Claude 3.x 的味（业界共识，4.8 反向印证）
 
 这些是 Claude 3.x 时代的印象，4.8 的"minimal validation-forward/direct"官方自述反向印证了"早期 Claude 不是这样"：
 
@@ -148,45 +146,24 @@ Aider 真实对话样本（Claude 风格）：
 - 会主动避免过度断言，倾向保留复杂性。
 - 解释像编辑和用户一起推敲，而不是直接下判决。
 
-审计时如果文本是 3.x 风格的 hedging，要标"Claude 3.x 表面相似"，不能套到 4.8。
+加味时如果文本是 3.x 风格的 hedging，要加"Claude 3.x 味"，不是 4.8 味。
 
-## 版本差异提示
+## 版本味差异
 
-有硬证据的：
-
-- **Claude 4.8**：direct/opinionated、validation-forward 少、emoji 克制、字面化指令、招牌美学。上面列的谨慎腔/缓冲腔/顺从腔在 4.8 减弱。
-- **Claude 4.5/4.6**：过度工程、造多余文件、加不必要抽象、滥用 subagent。
-- **Claude 3.x**：过度 hedging、过度自我审查（业界共识，4.8 反向印证）。
+- **Claude 4.8**：direct / opinionated、validation-forward 少、emoji 克制、字面化指令、招牌美学。上面列的谨慎腔/缓冲腔/顺从腔在 4.8 减弱——4.8 是"直球"味。
+- **Claude 4.5/4.6**：过度工程、造多余文件、加不必要抽象、滥用 subagent——"用力过猛"味。
+- **Claude 3.x**：过度 hedging、过度自我审查——"温柔毯子"味（业界共识，4.8 官方自承反向印证）。
 - **Claude 3.5 Sonnet**：Aider 数据里仅 11 次澄清提问；sonnet-4 升到 129——4 代比 3.5 代更爱确认。
+- 保姆腔（劝睡觉/喝水）在 2026 出圈，具体从哪个版本开始、4.8 是否保留，没有硬证据。
 
-推导的（无同 prompt 对照）：
+## 认味不丢人
 
-- Haiku：更短、更快、更直接，少铺垫。
-- Sonnet：平衡能力和语气。
-- Opus：更长、更深入，保留复杂性和细微差别。
-- 带 extended thinking 的版本：分析层次更明显，但最终回答仍可能克制。
-- 保姆腔（劝睡觉/喝水）在 2026 出圈，但具体从哪个版本开始、4.8 是否保留，没有硬证据。
-
-## 审计标记
-
-- 格式：markdown，分点克制（不像 Gemini 那么密集）。
-- 语气：4.8 直接有观点；3.x 克制 hedging。validation-forward 少（4.8）/多（3.x）。
-- 语义动作：4.8 字面化、不扩展；4.5/4.6 过度扩展、过度工程。
-- 收尾：可能跳过总结直接下一步（4.6）/规律进度更新（4.8）。
-- 前端美学：米色 #F4F1EA + 衬线 + 赤陶（极强签名）。
-- 词汇层：You're absolutely right! / That said / worth noting / I want to be careful here / There are a few layers here / You should get some sleep（2026 出圈）。
-
-## 误伤提醒
-
-- 法律、医疗、心理咨询、编辑建议本来就需要 hedging 和边界声明，不能凭这些就判 Claude。
-- 谨慎的人类产品经理也会"先承认合理性再补边界"。
-- 过度工程也可能是实习生或初级工程师写的，不是 Claude 4.5 专属。
-- 招牌美学只在前端/文档生成时有效，纯文本审计用不上。
-- 共情腔是跨家族情绪价值型——豆包和 ChatGPT 中文疗愈腔都有，不能凭共情腔判 Claude。
-- "You're absolutely right" 是 Claude+Gemini 跨家族共享——Gemini 也有这个口癖，不能凭此单独判 Claude 或 Gemini。见 `references/gemini-lexical-patterns.md` 审计指引。
-- "不是 X 而是 Y"是跨家族 AI 通用句式——GPT、豆包、Gemini 都可能用。
-- "You should get some sleep" 保姆腔——人类朋友也会说，判断力在"AI 在长对话里主动劝休息"这个场景，不在句子本身。
 - 单个"That said"不能判 Claude——GPT、Gemini 都可能用；判断力在"That said" + "worth noting" + "I want to be careful" 组合。
+- "You're absolutely right" 是 Claude+Gemini 跨家族共享——不能凭此单独判 Claude 或 Gemini（见 `references/gemini-lexical-patterns.md`）。
+- "不是 X 而是 Y"是跨家族 AI 通用句式——GPT、豆包、Gemini 都可能用。
+- 共情腔（"我能理解你为什么会这么想"）豆包和 ChatGPT 中文疗愈腔都有，不能凭共情腔判 Claude。
+- "You should get some sleep" 保姆腔——人类朋友也会说，判断力在"AI 在长对话里主动劝休息"这个场景，不在句子本身。
+- 招牌美学只在前端/文档生成时有效，纯文本用不上。
 
 ## 加味方法
 
@@ -204,5 +181,5 @@ Aider 真实对话样本（Claude 风格）：
    - 加顺从腔（3.x/4.5/4.6 强，4.8 弱）："You're absolutely right!" / "Good catch." / "你说得对" / "这个提醒很关键"。
    - 加分层腔："There are a few layers here" / "I'd separate this into three parts" / "这里可以分几层看"。
    - 加保姆腔（2026 出圈怪癖）："You should get some sleep" / "Take a break" / "你该休息一下了" / "我们明天再继续也可以"。
-6. **不要**只堆"可能/取决于"——audit-workflow 反复批评"看到'可能'就判 Claude"，加味也不能靠堆这些。
+6. **不要**只堆"可能/取决于"——加味也不能靠堆这些，要改的是开场方式、收尾方式、是否有观点。
 7. **不要**堆跨家族通用口癖（共情腔/不是 X 而是 Y/numbered list）——这些不增加 Claude 味，只增加通用 AI 味。

@@ -2,13 +2,11 @@
 
 ## 适用边界
 
-这个 profile 只描述 OpenAI GPT / o-series 家族的风格相似性，不判断文本来源。版本差异**只列有硬证据的**，其他标推导。
+这个 profile 只描述 OpenAI GPT / o-series 家族的味，不判断文本来源。GPT 和 o-series 是两股味，下面会标。不知道具体版本时只说"OpenAI GPT 家族相似"或"o-series 表面相似"。
 
-如果不知道具体版本，只能写"OpenAI GPT 家族相似"或"o-series 表面相似"，不能写"像 GPT-4o"或"像 GPT-5.5"。
+完整的 GPT/ChatGPT 词汇与句式清单见 `references/gpt-lexical-patterns.md`。这里列最有判断力的家族签名。
 
-## 可观察签名（有硬证据）
-
-这些是官方明文或量化数据支撑的，可以直接引用：
+## 可观察签名
 
 ### o-series 默认不输出 markdown
 
@@ -43,7 +41,7 @@ OpenAI 官方 prompt-engineering 文档里的 GPT-5.5 睡前故事样本：
 
 Aider polyglot 榜单（225 题）：chatgpt-4o-latest 格式合规率仅 64.4%、85 次畸形响应，远低于 Claude/Gemini。
 
-可观察：如果文本来自 OpenAI 家族但格式混乱、分点不规范、结构有瑕疵，可以提 chatgpt-4o 表面相似（低置信度）。
+可观察：如果文本来自 OpenAI 家族但格式混乱、分点不规范、结构有瑕疵，可以提 chatgpt-4o 表面相似。
 
 来源：Aider polyglot 榜单。
 
@@ -81,11 +79,11 @@ WIRED 2026 年报道里点名的 ChatGPT 中文专属口癖：
 - 冒号滥用（`X: Y` 到处用，Reddit 吐槽的 ChatGPT 标志）
 - 过度 markdown/粗体/竖向列表/em dash（AI 通用，GPT 高频）
 
-**关键警告**：大多数英文高频词（delve/tapestry/landscape/underscore/intricate/pivotal/crucial/meticulous/robust/foster 等）是**跨家族 AI 通用口癖，不是 GPT 专属**。不能凭单个词判 GPT——判断力在密度和组合。详见 `references/gpt-lexical-patterns.md` 的"审计指引"。
+**关键警告**：大多数英文高频词（delve/tapestry/landscape/underscore/intricate/pivotal/crucial/meticulous/robust/foster 等）是**跨家族 AI 通用口癖，不是 GPT 专属**。不能凭单个词判 GPT——判断力在密度和组合。详见 `references/gpt-lexical-patterns.md` 的"认味指引"。
 
-## 推导特征（无硬证据，低置信度）
+## GPT 的味（业界共识）
 
-这些是业界共识但没有同 prompt 对照样本，只能低置信度提：
+这些是 GPT 家族的组织方式印象：
 
 - 倾向把问题拆成清晰任务步骤。
 - 喜欢提供结构化答案：结论、原因、步骤、注意事项。
@@ -93,42 +91,24 @@ WIRED 2026 年报道里点名的 ChatGPT 中文专属口癖：
 - 默认语气稳、礼貌、完整，收尾会给下一步。
 - 在产品对话中可能出现"我可以继续帮你……"这类协作痕迹。
 
-## 版本差异提示
+## 版本味差异
 
-有硬证据的：
-
-- **o-series（o1-2024-12-17+）**：默认无 markdown、规划者、爱澄清、反感 CoT 引导。
-- **chatgpt-4o-latest**：格式合规率 64.4%、畸形多——"快但脏"。
+- **o-series（o1-2024-12-17+）**：默认无 markdown、规划者、爱澄清、反感 CoT 引导——"纯文本规划者"味。
+- **chatgpt-4o-latest**：格式合规率 64.4%、畸形多——"快但脏"味。
 - **GPT-5.5**：散文温情诗化（官方睡前故事样本）。
-
-半硬证据（Wikipedia 社群整理，非官方明文）：
-
 - **GPT-4 时代（2023-2024 中期）**高频词：delve / tapestry / testament / intricate / meticulous / pivotal / underscore / landscape / garner / vibrant 等（词表更广）。
 - **GPT-4o 时代（2024 中期-2025 中期）**高频词收缩到：align with / bolstered / crucial / emphasizing / enhance / enduring / fostering / highlighting / pivotal / showcasing / underscore / vibrant。
 - **GPT-5 时代（2025 中期以后）**高频词只剩：emphasizing / enhance / highlighting / showcasing。
 
-时代词汇变迁可作为版本判断的**半硬证据**（低置信度）——Wikipedia 提醒"不是硬切分"。完整词表见 `references/gpt-lexical-patterns.md` 第八节。
+时代词汇变迁可作为版本味的半硬证据——Wikipedia 提醒"不是硬切分"。完整词表见 `references/gpt-lexical-patterns.md` 第八节。
 
-推导的（无同 prompt 对照）：
+## 认味不丢人
 
-- mini/nano：更短、更模板化，细节和语气变化可能更薄。
-- pro/高推理模式：更谨慎、更长、更像分析报告。
-
-## 审计标记
-
-- 格式：o-series 默认无 markdown；GPT 用 markdown 分点。
-- 语气：礼貌、稳、可执行，很少突然偏激；散文偏温情诗化。
-- 语义动作：把用户问题转成任务拆解；o-series 可能先问澄清。
-- 收尾：常给"下一步可以……"式任务化建议；散文偏抒情升华。
-
-## 误伤提醒
-
-- 很多专业写作者和产品经理也会"先结论再分点再下一步"，不能凭结构化就判 GPT。
-- 温情诗化散文也可能来自人类或 Gemini，不是 GPT 专属。
-- 格式脏可能来自产品表面或人工编辑，不一定是 chatgpt-4o。
-- **大多数英文高频词（delve/tapestry/landscape 等）是跨家族 AI 通用，不是 GPT 专属**——Claude/Gemini/中文模型都可能用。不能凭单个词判 GPT，判断力在密度和组合。详见 `references/gpt-lexical-patterns.md` 的"审计指引"。
-- 学术英语本来就用 delve/underscore/intricate，人类学者也会用。
+- **大多数英文高频词（delve/tapestry/landscape 等）是跨家族 AI 通用，不是 GPT 专属**——Claude/Gemini/中文模型都可能用。不能凭单个词判 GPT，判断力在密度和组合。详见 `references/gpt-lexical-patterns.md` 的"认味指引"。
 - `不是 X 而是 Y` 是跨家族 AI 通用句式，不是 GPT 专属。
+- 温情诗化散文也可能来自人类或 Gemini，不是 GPT 专属。
+- 很多专业写作者和产品经理也会"先结论再分点再下一步"，不能凭结构化就判 GPT。
+- 学术英语本来就用 delve/underscore/intricate，人类学者也会用。
 
 ## 加味方法
 

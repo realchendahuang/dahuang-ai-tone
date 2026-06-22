@@ -1,33 +1,26 @@
 interface:
   display_name: "Dahuang AI Tone"
-  short_description: "模型家族、版本与产品表面的 AI 腔调审计与加味"
-  default_prompt: "Use $dahuang-ai-tone to audit which model family/version surface this text resembles, with evidence grounded in observable forms (not impressions), and distinguish hard evidence from inference for versions."
+  short_description: "AI 味玩梗——加味（把文本改成 GPT/Claude/Gemini/豆包的纯味）+ 找味（检测 AI 味在哪）"
+  default_prompt: "Use $dahuang-ai-tone to add AI flavor to this text (rewrite it in GPT/Claude/Gemini/Doubao style by changing structure/tone/behavior, not piling catchphrases), or to detect where the AI flavor is in a text and which family it resembles."
 capabilities:
-  - audit: 审计文本更像哪个模型家族/版本/产品表面，输出引用原文证据的报告
-  - compare: 跨家族风格对比
   - inject: 按指定模型家族/版本改写文本（改结构/行为模式，不堆口癖）
+  - detect: 指出文本里的 AI 味在哪、像哪个家族
+  - compare: 跨家族风格对比
 resources:
   entry: SKILL.md
   references:
-    - references/model-version-policy.md
-    - references/audit-workflow.md
-    - references/taxonomy.md
-    - references/anti-misjudgment.md
     - references/gpt-lexical-patterns.md
     - references/claude-lexical-patterns.md
     - references/gemini-lexical-patterns.md
     - references/doubao-lexical-patterns.md
-    - references/report-schema.md
     - references/reverse-humanizer.md
-    - references/evaluation.md
-    - references/research.md
   profiles:
     - profiles/openai-gpt-family.md
     - profiles/anthropic-claude-family.md
     - profiles/google-gemini-family.md
     - profiles/bytedance-doubao-family.md
   examples:
+    - examples/injection-report.md
     - examples/audit-report.md
     - examples/comparison.md
-    - examples/injection-report.md
     - examples/fixtures.md

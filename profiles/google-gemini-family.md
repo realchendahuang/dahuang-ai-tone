@@ -2,18 +2,15 @@
 
 ## 适用边界
 
-这个 profile 描述 Gemini 家族的风格相似性。Gemini 有 Pro、Flash、Flash-Lite、experimental、preview、stable 等版本形态。
+这个 profile 描述 Gemini 家族的味，不判断文本来源。Gemini 有 Pro、Flash、Flash-Lite、experimental、preview、stable 等版本形态。
 
-**诚实声明**：Gemini 官方文档（ai.google.dev）调研时 fetch 被墙，没拿到官方文本证据。但本 profile 现在有**两类硬证据**：
-
-1. **Aider 量化数据**：格式合规率、编辑格式偏好、通过率。
-2. **社区/媒体/学术多源报道**：Reddit 多帖（引号癖/Great request/Redditor 腔/类比狂魔）、Scientific American 语言学分析（更口语更解释）、TechRadar（更像人更难抓）、arXiv 论文（em dash 频率量化）。
+**诚实声明**：Gemini 官方文档（ai.google.dev）调研时 fetch 被墙，没拿到官方文本证据。但本 profile 有两类来源支撑：Aider 量化数据（格式合规率、编辑格式偏好、通过率）+ 社区/媒体/学术多源报道（Reddit 多帖、Scientific American 语言学分析、arXiv 论文 em dash 量化）。
 
 完整词汇与句式清单见 `references/gemini-lexical-patterns.md`。
 
 ## 可观察签名
 
-### Aider 量化数据（有硬证据）
+### Aider 量化数据
 
 #### 格式合规率 ~100%、0 畸形
 
@@ -37,7 +34,7 @@ Gemini 2.5 Pro 通过率 79-83%，在 Aider 榜单里属于第一梯队。能力
 
 来源：Aider polyglot 榜单。
 
-### 社区/媒体/学术多源报道（有来源支撑）
+### 社区/媒体/学术多源报道
 
 #### 引号癖（Gemini 最强专属签名）
 
@@ -102,7 +99,7 @@ Gemini 像热情、会做 PPT、爱打引号、爱类比的 Reddit 产品经理�
 GPT 的 AI 味来自结构。
 Claude 的 AI 味来自克制和边界感。
 Gemini 的 AI 味来自热情包装和过度解释。
-豆包的 AI 味来自情绪价值和顺从感。
+豆包 的 AI 味来自情绪价值和顺从感。
 ```
 
 **关键区分——都夸你，但味道不同**：
@@ -111,44 +108,20 @@ Gemini 的 AI 味来自热情包装和过度解释。
 - Claude 顺从腔："You're absolutely right!"（认真认错型，带感叹号、过度强调）
 - GPT validation-forward："很好的问题"（礼貌工具化型，比 Gemini 克制）
 
-## 版本差异提示
-
-有硬证据的：
+## 版本味差异
 
 - **Gemini 2.5 Pro**：格式合规 ~100%、0 畸形、偏好 diff-fenced、通过率 79-83%（Aider 数据）。em dash 频率 3.53/1000 词，低于 GPT/Claude（arXiv 论文）。
 - **Gemini 3.0**：随机引号、随机大写，40%-60% 输出有此问题（Reddit 用户报告）。
-
-推导的（无硬证据）：
-
-- Pro：更长、更完整，回答更像综合分析。
-- Flash：更快、更短，结构仍清楚，但压缩感更强。
-- experimental / preview：风格可能漂移，不适合稳定归因。
-- stable：更适合比较风格，但仍受系统提示影响。
 - 引号癖和 Redditor 腔从哪个版本开始、2.5 Pro 是否保留，没有硬证据。
 
-## 审计标记
+## 认味不丢人
 
-- 格式：高度规整、分点密集、结构严密（Aider 硬数据）。
-- 引号：在不需要的词周围疯狂加引号（Reddit 多帖，Gemini 最强专属签名）。
-- 语气：热情、简单化、解释型、比 ChatGPT 更口语（Scientific American 语言学分析）。
-- 开头：先夸你一句"Great request!"（Reddit）。
-- 类比：爱 "Think of it like this:" 不请自来的游戏/车/科技类比（Reddit）。
-- 小标题：爱包装成 "The [X] Issue" / "The [X] Effect" 格式（Reddit）。
-- 推荐：有时强硬（"NO, DO NOT DO THIS!" / "You MUST..."），鼓励式结尾（"Go ahead, you earned it."）（Reddit）。
-- 代码编辑：偏好 diff-fenced 格式（Aider 数据）。
-- 收尾：规整收束或鼓励式收束，不像 GPT 那样抒情升华。
-- em dash：频率低于 GPT/Claude（arXiv），**不能凭 em dash 判 Gemini**。
-
-## 误伤提醒
-
-- 说明文、知识库、教学内容本来就接近"知识卡片化"结构，不能凭规整就判 Gemini。
-- 格式合规率高也可能是产品表面或人工排版的结果。
 - **不能凭 em dash 判 Gemini**——arXiv 论文显示 Gemini 2.5 Pro 的 em dash 频率反而比 GPT/Claude 低。
 - **不能凭"You're absolutely right"判 Gemini**——Claude 也有这个口癖（GitHub issue 3382 + Reddit ClaudeAI），是 Claude+Gemini 跨家族共享。见 `references/claude-lexical-patterns.md` 第四节。
 - **不能凭"过度列表/过度粗体"判 Gemini**——各家 AI 都会用，不区分家族。
 - **不能凭"这是一个很好的问题"判 Gemini**——跨家族中文 AI 通用。
 - **不能凭"You're not just doing X; you're doing Y"判 Gemini**——和 GPT 的"不是 X 而是 Y"高度相似，是跨家族 AI 通用上价值句式。
-- **Gemini 词汇口癖样本基于社区/媒体多源报道构造**，不是真实模型输出。引号癖和 "Great request!" 有 Reddit 多帖报道，Scientific American 有语言学分析，arXiv 有 em dash 量化数据。但样本本身是构造的，不是真实模型输出。
+- Gemini 词汇口癖样本基于社区/媒体多源报道构造，不是真实模型输出（引号癖和 "Great request!" 有 Reddit 多帖报道，Scientific American 有语言学分析，arXiv 有 em dash 量化数据）。
 
 ## 加味方法
 

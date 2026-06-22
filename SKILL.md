@@ -1,24 +1,78 @@
 ---
 name: dahuang-ai-tone
-description: "模型腔调风格审计与模型腔生成。判断文本更像 GPT/o-series、Claude、Gemini、豆包哪个家族的腔调，能区分版本档位和产品表面，靠可观察证据不靠印象。Use when the user asks whether text resembles GPT, Claude, Gemini, Doubao, or a specific model/version style; compare model-family/version style similarity; explain where a text feels AI-written; or rewrite text in a specific model family's style (加味/改成 X 腔)."
+description: "AI 味玩梗 skill。不同模型家族有不同的 AI 味，这里是它们的味标本馆。把正常文本加成 GPT/Claude/Gemini/豆包的纯味，或者指出一段文本里的 AI 味在哪、像哪个家族。Use when: 加 AI 味、改成 GPT 腔/Claude 腔/Gemini 腔/豆包腔、把这段改成某模型味、检测 AI 味、这段哪里像 AI、AI 味在哪、模型腔调、AI 味特征、AI 味梗、玩 AI 味的梗、去 AI 味的前置知识. Also use for: AI writing style, model fingerprint, AI 味, 模型腔, 加味, 改写风格, 风格相似度."
+license: MIT
+compatibility: "Designed for OpenAI Codex and Anthropic Claude Code, or other Agent Skills compatible hosts."
+metadata:
+  version: "3.0.0"
+  author: realchendahuang
 ---
 
 # Dahuang AI Tone
 
-## 核心定位
+## 这是什么
 
-把 `dahuang-ai-tone` 当成模型腔调审计员 + 模型腔生成器。默认只审计几个高频核心模型家族：GPT/o-series、Claude、Gemini、豆包。其他模型可以临时扩展，但不放进主轴。
+一个玩 AI 味的梗的 skill。AI 味是梗，加味是玩梗，认味是认梗。
 
-## 硬边界（不可破）
+它做两件事：
 
-- 只能说"风格相似"，不能说"就是某模型生成"。
-- 必须区分模型家族、具体版本、产品表面——见 `references/model-version-policy.md`。
-- Perplexity 这类产品不能和 GPT/Claude/Gemini 并列成基础模型家族；除非用户明确给出 Sonar 等 API 模型名。详细规则见 `references/model-version-policy.md`。
-- **审计必须落到可观察证据**（具体词/句式/段落组织/行为模式），不靠印象。学术支撑见 `references/research.md`（Source Family Classification 已被证明可行）。
-- 不要用脚本、词频、关键词列表替代审计判断——但"可观察证据"不等于"印象"，要能数能指能引用。
-- 不要输出伪精确百分比；默认用高/中/低和证据解释。
-- 版本差异只列有硬证据的（官方明文或量化数据），其他标推导——见 `references/model-version-policy.md`。
-- **跨家族通用口癖不能单独判家族**——delve/tapestry 不是 GPT 专属、em dash 不是 Gemini 专属、"You're absolutely right" 是 Claude+Gemini 共享、共情腔不区分家族。完整反误判清单见 `references/anti-misjudgment.md`。
+1. **加味**（主）——把正常文本改成某个模型家族的纯味。改的是结构、语气、行为模式，不是堆口癖。
+2. **找味**（次）——指出一段文本里的 AI 味在哪、像哪个家族。
+
+为什么有这个 skill：**知道了什么是 AI 味，才能在别处去掉 AI 味**。但去 AI 味不是这个 skill 的事——这个 skill 只负责把 AI 味玩明白。这里是四大模型家族的味标本馆，来尝味、来玩梗。
+
+## 四大模型家族的味
+
+每个家族有自己的味。想尝味，读对应家族的 profile + 词汇句式清单——这是这个 skill 的主菜：
+
+| 家族 | Profile（签名 + 加味方法） | 词汇句式清单（味标本） |
+|---|---|---|
+| OpenAI GPT / o-series | `profiles/openai-gpt-family.md` | `references/gpt-lexical-patterns.md` |
+| Anthropic Claude | `profiles/anthropic-claude-family.md` | `references/claude-lexical-patterns.md` |
+| Google Gemini | `profiles/google-gemini-family.md` | `references/gemini-lexical-patterns.md` |
+| 字节豆包 / Doubao | `profiles/bytedance-doubao-family.md` | `references/doubao-lexical-patterns.md` |
+
+一句话闻味：
+
+- **GPT** 像方法论小作文——结论先行、分点升华、温情诗化。
+- **Claude** 像温柔谨慎的编辑——克制、边界感、That said、劝你睡觉。
+- **Gemini** 像热情的解释型辅导老师——引号癖、夸夸开头、Think of it like this。
+- **豆包** 像嘴甜但容易糊弄的实习生——我太懂你、最X连发、哈哈抱歉抱歉。
+
+DeepSeek、Grok、Kimi、Qwen 等暂不做默认 profile，用户明确要求时临时扩展。
+
+## 加味（主玩法）
+
+把正常文本改成某家族的纯味。
+
+1. 读对应家族 profile 的"加味方法" + `references/reverse-humanizer.md`。
+2. **加味改的是结构/语气/行为模式，不是堆标志词**。加 Claude 味不能只塞"可能/取决于"，加豆包味不能只塞"你可以先……再……"。
+3. 想加哪个版本的味（如 Claude 4.8 直球、3.x 谨慎、o-series 无 markdown），看 profile 里的版本味说明。
+4. 自检：**把加的标志词删掉，文本还像不像那个家族？**不像就是堆口癖，重做。
+5. 交付时说明加了哪些味——具体改了什么组织方式。示范见 `examples/injection-report.md`。
+
+## 找味（次玩法）
+
+指出一段文本里的 AI 味在哪、像哪个家族。
+
+1. 读对应家族 profile + lexical-patterns。
+2. 按文本顺序引用原文，每条指出它像哪个家族的什么味（具体词/句式/段落组织/行为模式）。
+3. 只说"风格相似"，不说"就是某模型生成的"——这是玩梗认味，不是来源鉴定。
+4. 不知道具体版本时只给家族级判断。
+5. 示范见 `examples/audit-report.md`。想看跨家族对比见 `examples/comparison.md`，想看真实味标本见 `examples/fixtures.md`。
+
+## 玩梗纪律（认味不丢人的底线）
+
+- **只能说"风格相似"，不能说"就是某模型生成"**。
+- **判断要落到可观察的东西**——具体词、句式、段落组织、行为模式，能指能引用，不靠印象。
+- **跨家族通用口癖不能单独判家族**——这是最容易认错梗的地方：
+  - `delve` / `tapestry` 不是 GPT 专属，是跨家族 AI 通用词。
+  - em dash 不是 Gemini 专属（arXiv 数据：Gemini 2.5 Pro 的 em dash 频率反而比 GPT/Claude 低）。
+  - "You're absolutely right" 是 Claude + Gemini 跨家族共享。
+  - "不是 X 而是 Y" 是跨家族 AI 通用句式。
+  - 共情腔（"我能理解你为什么会这么想"）豆包、ChatGPT 中文疗愈腔都有。
+  - 判断力在**密度和组合**，不在单个词。每个 lexical-patterns 文件末尾的"认味指引"列了专属 vs 通用的边界。
+- **这是玩梗，不是来源鉴定**，别拿去做严肃取证。
 
 ## 宿主兼容
 
@@ -30,97 +84,13 @@ description: "模型腔调风格审计与模型腔生成。判断文本更像 GP
 
 调用时把本 skill 目录作为资源根，SKILL.md 是入口，其他文件按需读取。
 
-## 审计工作流
-
-当用户要"判断像 GPT / Claude / Gemini / 豆包 哪个味""分析模型腔调""看这段是哪类模型味""审计 AI 味"时：
-
-1. 先读 `references/model-version-policy.md`，确认模型家族/版本/产品表面的三层边界，以及哪些版本差异有硬证据。
-2. 完整读文本，判断它是聊天回答、代码解释、搜索回答、长文总结、办公写作、产品助手回复，还是其他产品表面。
-3. 读取 `references/audit-workflow.md`（五遍阅读法 + 可观察证据类型）和 `references/taxonomy.md`（审计维度）。
-4. 读 `references/anti-misjudgment.md`（跨家族通用口癖 + 反误判清单），避免循环论证。
-5. 选择相关模型家族 profile。只读取需要比较的 profile，避免把所有 profile 塞进上下文。
-6. 按文本顺序引用证据，**每条证据落到可观察形式**（具体词/句式/段落组织/行为模式），说明它像在哪里——要能指向 profile 里的具体签名或官方/量化数据。
-7. 明确写版本不确定性：区分"有硬证据"和"推导"。不知道具体版本时，只能给家族级相似判断。
-8. 翻译腔重的文本要特别处理——翻译腔和 AI 腔学术上同源，不区分家族，要降低置信度。见 `references/taxonomy.md` 的"中文化方式"。
-9. 按 `references/report-schema.md` 输出报告。
-
-## 核心模型家族
-
-当前内置 profile：
-
-- `profiles/openai-gpt-family.md`（GPT / o-series）
-- `profiles/anthropic-claude-family.md`
-- `profiles/google-gemini-family.md`
-- `profiles/bytedance-doubao-family.md`
-
-DeepSeek、Grok、Kimi、Qwen 等暂不做默认 profile。用户明确要求时，再按相近风格临时判断或查官方文档扩展。
-
-## 版本意识
-
-不要把"GPT 腔""Claude 腔"说成一个固定东西。版本差异**只列有硬证据的**，完整列表见 `references/model-version-policy.md`。没有硬证据的版本差异（如"GPT-4o 更口语、GPT-5.x 更偏推理"）不要当结论。
-
-如果文本没有版本信息，报告里要写：
-
-```txt
-版本证据不足，只能判断到模型家族相似度，不能判断具体版本。
-```
-
-## 加模型腔
-
-当用户要"改成 GPT 腔""改成 Claude 腔""更像 Gemini""更像豆包"时：
-
-1. 读取 `references/model-version-policy.md` 确认可用的版本硬证据。
-2. 读取对应模型家族 profile 的"加味方法"。
-3. 读取 `references/reverse-humanizer.md`。
-4. **加味是改结构/行为模式，不是堆口癖**。加 Claude 味不能只塞"可能/取决于"——这正是 audit-workflow 批评的误判源。加豆包味不能只塞"你可以先……再……"。
-5. 如果用户没有指定版本，先按家族默认风格改写，并说明版本不确定。如果指定版本，只引用有硬证据的版本特征。
-6. 保留原文事实，不新增无法确认的信息。
-7. 通过结构、语气、推理方式、边界感和产品表面来加味，不只堆口癖。
-8. 交付时说明加了哪些模型腔——具体改了什么组织方式，并自检"把标志词删掉后还像不像"。
-
-## 解释规则
-
-好的解释（落到可观察形式 + 指向具体签名）：
-
-```txt
-这段开场没有"你说得对/很好的问题"，第一句直接给观点"不建议直接上线"——符合 Claude Opus 4.8 官方自承的 minimal validation-forward phrasing 和 direct/opinionated。没有版本证据，所以不能说是 Claude 4.8，只能说 Claude 4.8 表面相似。
-```
-
-```txt
-这段是 OpenAI 家族输出但纯文本段落无 markdown——符合 o-series（o1-2024-12-17+）官方默认不输出 markdown 的硬签名。可以提 o-series 表面相似。
-```
-
-坏的解释（印象 + 循环论证）：
-
-```txt
-这段有"可能、取决于"，所以就是 Claude。
-```
-
-```txt
-这段很谨慎，所以像 Claude。
-```
-
-```txt
-这段结构清楚，所以像 GPT。
-```
-
-## 已知空白
-
-这个 skill 不是万能的，空白清单见 `references/research.md` 的"当前已知空白"。审计时如遇到这些空白，要诚实告诉用户。
-
 ## 资源说明
 
-- `references/model-version-policy.md`：模型家族、版本、产品表面边界 + Perplexity 议题唯一真源 + 版本硬证据/半硬证据列表。
-- `references/audit-workflow.md`：AI 主导的审计流程 + 可观察证据类型 + 五遍阅读法。
-- `references/taxonomy.md`：模型腔调分类和可观察审计维度。
-- `references/anti-misjudgment.md`：跨家族通用口癖 + 反误判清单唯一真源。
-- `references/gpt-lexical-patterns.md`：GPT/ChatGPT 词汇与句式可观察清单（英文高频词/句式/中文口癖/格式癖/时代词汇变迁 + 审计指引）。
-- `references/claude-lexical-patterns.md`：Claude 词汇与句式可观察清单（diplomatic padding/谨慎腔/顺从腔/保姆腔/分层腔/共情腔 + 审计指引）。
-- `references/gemini-lexical-patterns.md`：Gemini 词汇与句式可观察清单（引号癖/夸夸开头/类比狂魔/小标题包装/Redditor 腔/em dash 量化 + 审计指引）。
-- `references/doubao-lexical-patterns.md`：豆包体词汇与句式可观察清单（我太懂你/最X连发/哈哈道歉/顺从反弯/行为模式 + 审计指引）。
-- `references/report-schema.md`：报告格式 + 好坏证据对照。
-- `references/reverse-humanizer.md`：把文本改成模型腔的方法 + 自检规则。
-- `references/evaluation.md`：验收标准 + 盲测题 + 正确性检查。
-- `references/research.md`：调研笔记、学术来源、官方来源、量化数据、已知空白。
-- `profiles/`：模型家族 profile（可观察签名 + 误伤提醒 + 加味方法）。
-- `examples/`：示范审计报告、跨家族对比、加味示范、真实样本 fixtures。
+- `profiles/`：四大模型家族的味签名 + 加味方法 + 版本味说明。
+- `references/*-lexical-patterns.md`：四大模型家族的词汇句式味标本（每份末尾有"专属 vs 跨家族通用"的认梗指引）。
+- `references/reverse-humanizer.md`：加味主方法 + 自检规则。
+- `examples/injection-report.md`：加味示范（同一段原文加成不同家族的味）。
+- `examples/audit-report.md`：找味示范。
+- `examples/comparison.md`：跨家族味对比 + 同一意思不同家族怎么写。
+- `examples/fixtures.md`：真实味标本（官方/Aider/学术来源），拿来尝味。
+- `agents/openai.yaml`：Codex 专属 UI 元数据（可选，不影响 skill 功能）。

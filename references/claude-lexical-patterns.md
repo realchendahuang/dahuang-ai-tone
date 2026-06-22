@@ -1,6 +1,6 @@
 # Claude / Anthropic 词汇与句式可观察清单
 
-> 这是一份**清单 + 来源**，不是结论。审计员据此找可观察证据，但必须遵守文末的"审计指引"——部分口癖是跨家族 AI 通用（共情腔/不是 X 而是 Y/numbered list），不能凭单个词判 Claude。
+> 这是一份**清单 + 来源**，不是结论。认味时据此找可观察证据，但必须遵守文末的"认味指引"——部分口癖是跨家族 AI 通用（共情腔/不是 X 而是 Y/numbered list），不能凭单个词判 Claude。
 
 ## 目录
 
@@ -16,7 +16,7 @@
 - [十、"不是 X，而是 Y"也有，但跨家族通用](#十不是-x而是-y也有但跨家族通用)
 - [十一、Claude 中文口癖清单（汇总）](#十一claude-中文口癖清单汇总)
 - [十二、Claude / GPT / 豆包口癖差异对照](#十二claude--gpt--豆包口癖差异对照)
-- [审计指引（使用说明）](#审计指引使用说明)
+- [认味指引（使用说明）](#认味指引使用说明)
 
 ## 一、"值得注意"腔
 
@@ -275,7 +275,7 @@ X isn't the issue; Y is.
 真正的风险不在 X，而在 Y
 ```
 
-**注意**：这是跨家族 AI 通用句式，GPT、豆包、Gemini 都可能用。见 `references/gpt-lexical-patterns.md` 第三节和 `references/doubao-lexical-patterns.md` 审计指引。不能凭此判 Claude。
+**注意**：这是跨家族 AI 通用句式，GPT、豆包、Gemini 都可能用。见 `references/gpt-lexical-patterns.md` 第三节和 `references/doubao-lexical-patterns.md` 认味指引。不能凭此判 Claude。
 
 ## 十一、Claude 中文口癖清单（汇总）
 
@@ -349,7 +349,7 @@ Claude 味：礼貌、克制、共情、边界感、轻微说教。读起来比 
 
 ---
 
-## 审计指引（使用说明）
+## 认味指引（使用说明）
 
 这份清单是**可观察证据库**，但使用时必须遵守以下规则，否则会制造误判：
 
@@ -429,7 +429,7 @@ Claude 的 AI 味来自克制和边界感。
 ### 6. 反误判
 
 - 不能凭"That said"就判 Claude——GPT、Gemini 都可能用，但"That said" + "worth noting" + "I want to be careful" 组合是 Claude 签名。
-- 不能凭"You're absolutely right"就判 Claude——Gemini 也有这个口癖（Reddit r/GeminiAI 列入口癖清单），是 Claude+Gemini 跨家族共享。Claude 的更偏认真认错型（带感叹号、过度强调），Gemini 的更偏夸夸腔。见 `references/gemini-lexical-patterns.md` 审计指引。
+- 不能凭"You're absolutely right"就判 Claude——Gemini 也有这个口癖（Reddit r/GeminiAI 列入口癖清单），是 Claude+Gemini 跨家族共享。Claude 的更偏认真认错型（带感叹号、过度强调），Gemini 的更偏夸夸腔。见 `references/gemini-lexical-patterns.md` 认味指引。
 - 不能凭共情腔判 Claude——跨家族情绪价值型，豆包和 ChatGPT 中文疗愈腔都有。
 - 不能凭"不是 X 而是 Y"判 Claude——跨家族 AI 通用句式。
 - 法律、医疗、心理咨询、编辑建议本来就需要 hedging 和边界声明，不能凭这些就判 Claude——谨慎的人类产品经理也会"先承认合理性再补边界"。
