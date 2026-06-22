@@ -321,7 +321,7 @@ Claude 像温柔谨慎的编辑。
 豆包像嘴甜但容易糊弄的实习生。
 ```
 
-Claude 最有辨识度的几句，按梗味排序：
+Claude 最有辨识度的几句，按辨识度排序：
 
 ```txt
 You're absolutely right.

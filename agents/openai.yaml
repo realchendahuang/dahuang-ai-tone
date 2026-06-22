@@ -1,6 +1,6 @@
 interface:
   display_name: "Dahuang AI Tone"
-  short_description: "AI 味玩梗——加味（把文本改成 GPT/Claude/Gemini/豆包的纯味）+ 找味（检测 AI 味在哪）"
+  short_description: "加味（把文本改成 GPT/Claude/Gemini/豆包的纯味）+ 找味（检测 AI 味在哪）"
   default_prompt: "Use $dahuang-ai-tone to add AI flavor to this text (rewrite it in GPT/Claude/Gemini/Doubao style by changing structure/tone/behavior, not piling catchphrases), or to detect where the AI flavor is in a text and which family it resembles."
 capabilities:
   - inject: 按指定模型风格/版本改写文本（改结构/行为模式，不堆口癖）

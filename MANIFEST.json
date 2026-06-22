@@ -2,24 +2,24 @@
   "skill": {
     "name": "dahuang-ai-tone",
     "version": "3.0.0",
-    "description": "AI 味玩梗 skill。不同模型风格有不同的 AI 味，这里是它们的味标本馆。把正常文本加成 GPT/Claude/Gemini/豆包的纯味（改结构/语气/行为模式，不堆口癖），或者指出一段文本里的 AI 味在哪、像哪个风格。跨风格通用口癖不单独判风格，判断力在密度和组合。",
+    "description": "不同模型风格有不同的 AI 味，这里是它们的味标本馆。把正常文本加成 GPT/Claude/Gemini/豆包的纯味（改结构/语气/行为模式，不堆口癖），或者指出一段文本里的 AI 味在哪、像哪个风格。跨风格通用口癖不单独判风格，判断力在密度和组合。",
     "entry": "SKILL.md",
     "license": "MIT"
   },
   "files": [
     {
       "path": "SKILL.md",
-      "sha256": "0510e1345833a32ca2d046d257e75be8614899fb7f4bc31657d27e96e1578add",
+      "sha256": "fe7d83cc56600c51ba9212254cf2fb40c265c1c39db3336542cce91bcc9e68d5",
       "role": "entry"
     },
     {
       "path": "README.md",
-      "sha256": "faf31a5945213746fa161b342b98e5e4b9dd9965c397156c7bcd6ff4b3ceacf0",
+      "sha256": "0f803109989bd15f8cab272eec544b6b8a8258bd42a4782eaae9dc73a8784c7b",
       "role": "doc"
     },
     {
       "path": "agents/openai.yaml",
-      "sha256": "529d483d4892bf44909d475cadae66b8bd6baee63cc22354227657732aeb3447",
+      "sha256": "a98fc97d69b9490d866437af86be62928200f499c17d3eca9d1973b84871b2dd",
       "role": "agent-config"
     },
     {
@@ -29,12 +29,12 @@
     },
     {
       "path": "references/claude-lexical-patterns.md",
-      "sha256": "c8b06ffe94e16d5fc1f94314f59ebfbaf8f405f51d8eadf89eeb5879126c8d47",
+      "sha256": "313c5dc89698fee99ed6c4575224886865fa13a6988f7e0352f8c53f0f01554f",
       "role": "reference"
     },
     {
       "path": "references/gemini-lexical-patterns.md",
-      "sha256": "fbe13cfaf1126c61aa9aebaf799dae3574626b405dc4c72dcc41b630e85da659",
+      "sha256": "7241c7dc1245e6ccc40989934f13f635ddafe15ecfb95ce8790f8032091eb5fe",
       "role": "reference"
     },
     {
@@ -84,7 +84,7 @@
     },
     {
       "path": "examples/fixtures.md",
-      "sha256": "6028cdabf576f9fcc9d37fa6159fb54c8135b8480218a31000c8cd3483f23b98",
+      "sha256": "273a2f1931ae90e1832a0fc99bb93f07d02d1f7167d59daddb996152c88eb8f9",
       "role": "example"
     }
   ],

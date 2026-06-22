@@ -272,7 +272,7 @@ Gemini 像热情、会做 PPT、爱打引号、爱类比的 Reddit 产品经理�
 豆包像嘴甜但容易糊弄的实习生。
 ```
 
-Gemini 最有辨识度的几句，按梗味排序：
+Gemini 最有辨识度的几句，按辨识度排序：
 
 ```txt
 Great request!

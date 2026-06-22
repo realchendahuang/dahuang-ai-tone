@@ -1,6 +1,6 @@
 # Dahuang AI Tone
 
-> AI 味是梗。把文本加成 GPT/Claude/Gemini/豆包的味，或者看一段文本最像哪个模型写的。
+> 把文本加成 GPT/Claude/Gemini/豆包的味，或者看一段文本最像哪个模型写的。
 
 ## 它能做什么
 
