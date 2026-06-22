@@ -14,7 +14,7 @@
 
 **为什么有它**：知道了什么是 AI 味，才能在别处去掉 AI 味。但去 AI 味不是这个 skill 的事——这个 skill 只负责把 AI 味玩明白。
 
-**姐妹 skill**：[`dahuang-human-tone`](https://github.com/realchendahuang/dahuang-human-tone) 是清洗剂——把文本里的 AI 味去掉（删模板壳/路标词/升华收尾，保信息保风格）。这个 skill 加味 + 找味，那个 skill 去味。配套使用：先用本 skill 搞清楚什么是 AI 味，再用 `dahuang-human-tone` 清洗。
+**姐妹 skill**：[`dahuang-human-tone`](https://github.com/realchendahuang/dahuang-human-tone)——去除中文文本里的 AI 味。
 
 ## 看看效果
 
