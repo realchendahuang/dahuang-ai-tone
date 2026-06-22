@@ -136,7 +136,7 @@ Aider 真实对话样本（Claude 风格）：
 - **numbered list**——各家 AI 都会用，不区分风格。
 - **"It's important to note"**——Wikipedia 列为旧 LLM 通用免责声明句式。
 
-## Claude 3.x 的味（业界共识，4.8 反向印证）
+## Claude 3.x 的味（历史版本，可选）
 
 这些是 Claude 3.x 时代的印象，4.8 的"minimal validation-forward/direct"官方自述反向印证了"早期 Claude 不是这样"：
 
@@ -150,9 +150,9 @@ Aider 真实对话样本（Claude 风格）：
 
 ## 版本味差异
 
-- **Claude 4.8**：direct / opinionated、validation-forward 少、emoji 克制、字面化指令、招牌美学。上面列的谨慎腔/缓冲腔/顺从腔在 4.8 减弱——4.8 是"直球"味。
+- **Claude 4.8（当前默认）**：direct / opinionated、validation-forward 少、emoji 克制、字面化指令、招牌美学。上面列的谨慎腔/缓冲腔/顺从腔在 4.8 减弱——4.8 是"直球"味。
 - **Claude 4.5/4.6**：过度工程、造多余文件、加不必要抽象、滥用 subagent——"用力过猛"味。
-- **Claude 3.x**：过度 hedging、过度自我审查——"温柔毯子"味（业界共识，4.8 官方自承反向印证）。
+- **Claude 3.x（历史版本，可选）**：过度 hedging、过度自我审查——"温柔毯子"味（业界共识，4.8 官方自承反向印证）。
 - **Claude 3.5 Sonnet**：Aider 数据里仅 11 次澄清提问；sonnet-4 升到 129——4 代比 3.5 代更爱确认。
 - 保姆腔（劝睡觉/喝水）在 2026 出圈，具体从哪个版本开始、4.8 是否保留，没有硬证据。
 
@@ -171,8 +171,8 @@ Aider 真实对话样本（Claude 风格）：
 
 加 Claude 味：
 
-1. 加 4.8 味：去掉 validation-forward 开场，第一句直接给观点；emoji 克制；收尾直接下一步不啰嗦。
-2. 加 3.x 味：先承认合理性，加边界和例外，用"更像是""可能说明"降低结论强度。
+1. 加 4.8 味（当前默认）：去掉 validation-forward 开场，第一句直接给观点；emoji 克制；收尾直接下一步不啰嗦。
+2. 加 3.x 味（历史版本，可选）：先承认合理性，加边界和例外，用"更像是""可能说明"降低结论强度。
 3. 编程场景：先一句原理解释（"we need to..."），再给方案（"Here's how to..."）。
 4. 前端场景：用米色 #F4F1EA 背景 + 衬线展示字 + 赤陶色强调。
 5. 词汇层加味（见 `references/claude-lexical-patterns.md`）：

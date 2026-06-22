@@ -9,12 +9,12 @@
   "files": [
     {
       "path": "SKILL.md",
-      "sha256": "fe7d83cc56600c51ba9212254cf2fb40c265c1c39db3336542cce91bcc9e68d5",
+      "sha256": "d140f64ecdfdbc0b3e3307ab099b6866f07b4284fd7ade3dfc128f6f3d7d333c",
       "role": "entry"
     },
     {
       "path": "README.md",
-      "sha256": "77cfcd7b007ee356e637fe9e33d9b9ec95d76dcf4fabfae592a080d6a874e935",
+      "sha256": "276261491c5d0136784f04f61fea60f81983eb7d739933bb6a0ee923e8bf873a",
       "role": "doc"
     },
     {
@@ -24,27 +24,32 @@
     },
     {
       "path": "references/gpt-lexical-patterns.md",
-      "sha256": "e99e340643109c696853cadb3446cedc8e8d3bd1769bcdf11124ac21f38f7206",
+      "sha256": "4e6148aebeb42ed5aceae19c967c49b894ba956420de97757341737b3667360a",
       "role": "reference"
     },
     {
       "path": "references/claude-lexical-patterns.md",
-      "sha256": "313c5dc89698fee99ed6c4575224886865fa13a6988f7e0352f8c53f0f01554f",
+      "sha256": "c3f95c6865ddca31684765080adc014fa51c1b3398cf9eade0d4578492ee780e",
       "role": "reference"
     },
     {
       "path": "references/gemini-lexical-patterns.md",
-      "sha256": "7241c7dc1245e6ccc40989934f13f635ddafe15ecfb95ce8790f8032091eb5fe",
+      "sha256": "3ab191da24bbe86793003e1b78146c69433a61e5a50b212f04f4a7bc77031910",
       "role": "reference"
     },
     {
       "path": "references/doubao-lexical-patterns.md",
-      "sha256": "39d6de6d71f779a152ff2455ce602c78c96b8174aec4358415b41ac02a1565f5",
+      "sha256": "1d928a5407f0523bd68f769b8ca8caa4de4b3d52f49867ae46407d0f7a35e874",
       "role": "reference"
     },
     {
       "path": "references/reverse-humanizer.md",
-      "sha256": "25094a50bbfa6d51c1504837e55eb720007d69d9bb58d6702d87eda48563b1f3",
+      "sha256": "47e02b210ad1051118caa4c92e1ca266772150bd831b2dc24df19eb4a9ee95f6",
+      "role": "reference"
+    },
+    {
+      "path": "references/common-ai-patterns.md",
+      "sha256": "6698903ddba3db0037681db55c2577987ff698c6df56db7d9c1d4927938e8ca9",
       "role": "reference"
     },
     {
@@ -54,7 +59,7 @@
     },
     {
       "path": "profiles/anthropic-claude-style.md",
-      "sha256": "af3bda3a4faee88bfb94524db488f7bbc1a09121be94cf6860b4c7be60229856",
+      "sha256": "a2e849e5994bb5d7f426bc8d67530db50c9b610a06529f4ba644448b23589975",
       "role": "profile"
     },
     {
@@ -74,12 +79,12 @@
     },
     {
       "path": "examples/comparison.md",
-      "sha256": "fe4f86d56234aa68a015ff3c670ae8829caa86eb037d012b86e052de8280a155",
+      "sha256": "670838e41c2f5e8343317d4726af94159421116cbb8ab0e254e91dd7765b1eb4",
       "role": "example"
     },
     {
       "path": "examples/injection-report.md",
-      "sha256": "ff5e348762e603b91e926cdf99c78167968c0dfa069a850cea598cc71dbe07c0",
+      "sha256": "7481669c61059c47172c60a1e0150a8d7bb022771b2763c2c8b75d6449830650",
       "role": "example"
     },
     {

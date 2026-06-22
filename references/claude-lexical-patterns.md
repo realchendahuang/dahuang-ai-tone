@@ -351,7 +351,7 @@ Claude 味：礼貌、克制、共情、边界感、轻微说教。读起来比 
 
 ## 认味指引（使用说明）
 
-这份清单是**可观察证据库**，但使用时必须遵守以下规则，否则会制造误判：
+这份清单是**可观察证据库**，但使用时必须遵守以下规则，否则会制造误判。完整跨风格通用 AI 味清单见 `references/common-ai-patterns.md`——下面标注的"通用"项只是其中最易误判的几个。
 
 ### 1. Claude 专属 vs 跨风格 AI 通用
 
@@ -418,9 +418,9 @@ Claude 的 AI 味来自克制和边界感。
 ### 5. 版本差异提示
 
 有硬证据的版本差异（见 `profiles/anthropic-claude-style.md`）：
-- **Claude 4.8**：direct/opinionated、validation-forward 少、emoji 克制、字面化指令。上面列的谨慎腔/缓冲腔在 4.8 减弱。
+- **Claude 4.8（当前默认）**：direct/opinionated、validation-forward 少、emoji 克制、字面化指令。上面列的谨慎腔/缓冲腔在 4.8 减弱。
 - **Claude 4.5/4.6**：过度工程、造多余文件、加不必要抽象、滥用 subagent。
-- **Claude 3.x**：过度 hedging、过度自我审查（业界共识，4.8 反向印证）。
+- **Claude 3.x（历史版本）**：过度 hedging、过度自我审查（业界共识，4.8 反向印证）。
 - **Claude 3.5 Sonnet**：Aider 数据里仅 11 次澄清提问；sonnet-4 升到 129——4 代比 3.5 代更爱确认。
 
 推导的（无同 prompt 对照）：
