@@ -1,26 +1,35 @@
 # 真实味标本
 
-> 这些是**真实样本**（官方文档/Aider 评测/学术来源），不是人造变体。每条标注来源。Gemini/豆包的纯文本真实样本缺失，诚实标明。拿来尝味、识别。
+> 这些是历史样本、官方示例和评测片段，用于观察写作表面，不是来源识别库。官方示例只能证明模型能产生某种输出，评测格式也可能由工具和提示造成。使用前先读 `references/evidence-policy.md`。
+
+## 目录
+
+1. OpenAI GPT / reasoning 历史样本
+2. Anthropic Claude 历史样本
+3. Google Gemini 历史样本
+4. 字节豆包与中文模型样本
+5. Aider 评测数据
+6. 翻译腔与 AI 腔
 
 ## OpenAI GPT / o-series 风格样本
 
-### 样本 G-1｜GPT-5.5 睡前故事（官方文档示例输出）
+### 样本 G-1｜OpenAI 提示工程页面的睡前故事示例
 
 ```txt
 Under the soft glow of the moon, Luna the unicorn danced through fields of twinkling stardust, leaving trails of dreams for every child asleep.
 ```
 
-来源：https://platform.openai.com/docs/guides/prompt-engineering （model gpt-5.5，prompt "Write a one-sentence bedtime story about a unicorn."）
+来源：https://developers.openai.com/api/docs/guides/prompt-engineering （核对于 2026-07-10；当前页面展示该输出，但不应从成品反推具体模型版本。）
 
-认味要点：拟人化命名（Luna）、意象堆叠（moon/stardust/dreams）、抒情收尾"for every child asleep"。GPT 散文的"温情诗化"签名。
+观察要点：拟人化命名（Luna）、意象组合（moon/stardust/dreams）、抒情收尾。它适合做温情散文模拟样本，不是 GPT 来源签名。
 
-### 样本 G-2｜o-series 默认无 markdown（官方行为签名）
+### 样本 G-2｜reasoning API 的 Markdown 产品表面
 
 OpenAI 官方：o-series（o1-2024-12-17+）默认不输出 markdown，需 developer message 里写 `Formatting re-enabled` 才开。
 
-来源：https://platform.openai.com/docs/guides/reasoning-best-practices
+来源：https://developers.openai.com/api/docs/guides/reasoning-best-practices （核对于 2026-07-10。）
 
-认味要点：如果文本是 OpenAI 风格输出且为纯文本段落无 markdown，可以提 o-series 表面相似。
+观察要点：这是特定 API 和 developer message 配置行为。未知纯文本不能据此反推 OpenAI 或 o-series。
 
 ### 样本 G-3｜chatgpt-4o-latest 格式脏（Aider 量化数据）
 
@@ -28,7 +37,7 @@ Aider polyglot 榜单（225 题）：chatgpt-4o-latest 格式合规率仅 64.4%�
 
 来源：https://aider.chat/docs/leaderboards/
 
-认味要点：OpenAI 风格但格式混乱、分点不规范，可提 chatgpt-4o 表面相似（低置信度）。
+观察要点：格式合规率描述评测工具与任务表现，不是自然语言文风，不能拿来识别未知文本。
 
 ### 样本 G-4｜GPT/ChatGPT 英文口癖组合（跨风格 AI 通用，密度判断）
 
@@ -42,7 +51,7 @@ In summary, navigating the complexities of API development requires a meticulous
 
 认味要点：高频词密集出现（delve/intricate/landscape/robust/interplay/tapestry/underscore/pivotal/meticulous/showcase/enduring）+ 句式（`not only... but also...` / rule of three / `It's important to note` / `In summary`）。**注意：这些是跨风格 AI 通用口癖，不是 GPT 专属**——不能凭这些判 GPT 风格，只能判"AI 腔重"。要判 GPT 风格需要配合其他签名（温情诗化/o-series 无 markdown/ChatGPT 中文口癖等）。判断力在密度和组合。
 
-### 样本 G-5｜ChatGPT 中文本地化口癖（WIRED 报道，风格专属）
+### 样本 G-5｜媒体报道的 ChatGPT 中文产品口癖
 
 ```txt
 别担心，我会稳稳地接住你。
@@ -54,9 +63,9 @@ In summary, navigating the complexities of API development requires a meticulous
 
 来源：https://www.wired.com/story/chatgpt-chinese-catch-you-steadily-sycophancy
 
-认味要点：WIRED 明确报道的 ChatGPT 中文口癖。"我会稳稳地接住你"来自 "I've got you" 安抚语，过分亲密/心理咨询化；"砍一刀"和拼多多/Temu 营销语有关。这两个可以作为 GPT 风格签名（中文场景）。
+观察要点：可用于模拟某时期的 ChatGPT 中文产品表面；媒体报道不等于跨版本家族签名。
 
-### 样本 G-6｜GPT-4 时代 vs GPT-5 时代词汇（版本半硬证据）
+### 样本 G-6｜不同时期 AI 高频词的历史观察
 
 GPT-4 时代（2023-2024 中期）高频词表更广：
 
@@ -72,7 +81,7 @@ emphasizing / enhance / highlighting / showcasing
 
 来源：Wikipedia 社群整理。提醒"不是硬切分"。
 
-认味要点：如果文本高频用 delve/tapestry/testament，偏 GPT-4 时代；只剩 emphasizing/enhance/highlighting/showcasing，偏 GPT-5 时代。半硬证据，低置信度。完整词表见 `references/gpt-lexical-patterns.md` 第八节。
+观察要点：这些词跨模型、语料和编辑流程共享，只用于理解历史趋势，不用于判断未知文本版本。完整词表见 `references/gpt-lexical-patterns.md`。
 
 ### 样本 G-7｜中文"不是 X 而是 Y"句式（跨风格 AI 通用）
 
@@ -96,15 +105,15 @@ To create a Flask app with a `/hello` endpoint that returns 'Hello, World!', we 
 
 认味要点：先一句原理解释（"we need to..."），再给方案（"Here's how to..."）。Claude/GPT 编程助手的典型 "explain-then-do" 开场。
 
-### 样本 C-2｜Claude Opus 4.8 风格自述（官方）
+### 样本 C-2｜Claude 某版本的官方风格自述快照
 
 Anthropic 官方：Claude Opus 4.8 "tends toward a direct, opinionated style with minimal validation-forward phrasing and sparing emoji use"。
 
 来源：https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/prompting-claude-opus-4-8
 
-认味要点：开场无 validation-forward、第一句直接给观点、emoji 克制 → Claude 4.8 表面相似。
+观察要点：这是一个带版本和日期的官方快照。可用于近似模拟该快照，不应外推为当前 Claude 家族永久风格。
 
-### 样本 C-3｜Claude 招牌美学（官方，极强签名）
+### 样本 C-3｜Claude 官方提示文档中的审美快照
 
 ```txt
 warm cream/off-white backgrounds (~#F4F1EA), serif display type (Georgia, Fraunces, Playfair), italic word-accents, and a terracotta/amber accent.
@@ -112,7 +121,7 @@ warm cream/off-white backgrounds (~#F4F1EA), serif display type (Georgia, Fraunc
 
 来源：https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/prompting-claude-opus-4-8
 
-认味要点：前端代码/文档生成时，米色 #F4F1EA + 衬线 + 赤陶色 → Claude 风格强签名。
+观察要点：前端配色与字体可能由提示、模板和时期共同造成，只能当历史产品表面，不是模型来源签名。
 
 ### 样本 C-4｜Claude 4.5/4.6 过度工程倾向（官方自承）
 

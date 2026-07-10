@@ -28,7 +28,7 @@
 ```
 
 - Reddit 用户专门发帖吐槽 Gemini 会在不需要的词周围疯狂加 quotation marks，尤其 creative / qualitative 类型回答里，甚至"每句话都有一个引号"；评论里有人说这像 Gemini 觉得每隔几个词就要打空气引号，还有人明确说"过度使用引号"在他的体验里很 Gemini-specific。来源：https://www.reddit.com/r/GeminiAI/comments/1qa2foq/massive_overuse_of_quotation_marks_for_certain/
-- 另一个帖子标题本身就带着 Gemini 式灾难现场：用户吐槽 Gemini 3.0 会随机把生成内容放进引号、随机大写，甚至声称 40%-60% 输出都有这种问题，哪怕明确要求它不要这样，它也继续这样。来源：https://www.reddit.com/r/Bard/comments/1q0fch5/i_hate_how_gemini_30_decides_to_randomely_put/
+- 另一个帖子吐槽某次 Gemini 产品输出会随机加引号和大写，并给出 40%-60% 的个人体感。这个比例是单一用户自报，不是可推广的统计。来源：https://www.reddit.com/r/Bard/comments/1q0fch5/i_hate_how_gemini_30_decides_to_randomely_put/
 
 中文对应：
 
@@ -304,7 +304,7 @@ Gemini 味：热情、简单化、爱包装、爱引号、爱类比、爱夸你�
 ### 1. Gemini 专属 vs 跨风格 AI 通用
 
 **Gemini 专属签名（可作为风格判断依据）**：
-- 引号癖——Reddit 多帖明确归给 Gemini，40%-60% 输出有此问题，用户说"Gemini-specific"。这是 Gemini 最强专属签名。
+- 引号癖——Reddit 多帖把它与 Gemini 产品表面联系起来，但比例来自个人体感，也可能由任务和提示造成。它适合做模拟原料，不是专属签名。
 - "Great request!" / "That's a great request!" 夸夸开头——Reddit 明确归给 Gemini，用户痛点是"太爱 flattery / emotional outbursts / complementing the user"。
 - "Think of it like this:" 类比狂魔——Reddit 多帖归给 Gemini，尤指不请自来的游戏/车/科技类比。
 - "The [X] Issue" / "The [X] Effect" / "The [X] Problem" 小标题包装——Reddit 归给 Gemini 的 Redditor 腔。
@@ -380,8 +380,8 @@ Gemini 的 AI 味来自热情包装和过度解释。
 ### 5. 版本差异提示
 
 有硬证据的版本差异（见 `profiles/google-gemini-style.md`）：
-- **Gemini 2.5 Pro**：格式合规 ~100%、0 畸形、偏好 diff-fenced、通过率 79-83%（Aider 量化数据）。em dash 频率 3.53/1000 词，低于 GPT/Claude（arXiv 论文）。
-- **Gemini 3.0**：随机引号、随机大写，40%-60% 输出有此问题（Reddit 用户报告）。
+- Aider 的具体版本数据描述代码编辑格式与评测任务，不是自然语言文风。
+- Reddit 的随机引号、随机大写和比例属于产品观察，不应用于版本归因。
 
 推导的（无同 prompt 对照）：
 - Pro：更长、更完整，回答更像综合分析。

@@ -1,98 +1,125 @@
 ---
 name: dahuang-ai-tone
-description: "不同模型风格有不同的 AI 味，这里是它们的味标本馆。把正常文本加成 GPT/Claude/Gemini/豆包的纯味，或者指出一段文本里的 AI 味在哪、像哪个风格。Use when: 加 AI 味、改成 GPT 腔/Claude 腔/Gemini 腔/豆包腔、把这段改成某模型味、检测 AI 味、这段哪里像 AI、AI 味在哪、模型腔调、AI 味特征、去 AI 味的前置知识. Also use for: AI writing style, model fingerprint, AI 味, 模型腔, 加味, 改写风格, 风格相似度."
-license: MIT
-metadata:
-  version: "3.0.0"
-  author: realchendahuang
+description: 模拟或分析 GPT、Claude、Gemini、豆包等模型家族的可观察写作风格，支持加 AI 味、模型腔改写、风格对比和 AI 味诊断。适用于“改成某模型味”“哪里像 AI”“像哪个模型风格”；不用于确认生成来源、作者身份或具体模型版本。
 ---
 
 # Dahuang AI Tone
 
-## 这是什么
+把模型风格当作可观察、可模拟的写作表面，而不是来源鉴定工具。
 
-一个研究 AI 风格特征的 skill。
+## 先选模式
 
-它做两件事：
+- **加味**：把普通文本改成用户指定的模型家族、版本快照或产品表面。
+- **找味**：指出文本中可观察的 AI 写作模式和相似家族。
+- **对比**：让同一内容呈现多个模型风格，说明结构差异。
 
-1. **加味**（主）——把正常文本改成某个模型风格的纯味。改的是结构、语气、行为模式，不是堆口癖。
-2. **找味**（次）——指出一段文本里的 AI 味在哪、像哪个风格。
+用户只说“加 AI 味”但没有指定家族时，先问一个目标风格；用户只想看通用 AI 腔时，使用 \`references/common-ai-patterns.md\`。
 
-为什么有这个 skill：**知道了什么是 AI 味，才能在别处去掉 AI 味**。但去 AI 味不是这个 skill 的事——这个 skill 只负责把 AI 味讲清楚。这里是四大模型风格的味标本馆。
+## 分清三个层次
 
-姐妹 skill：[`dahuang-human-tone`](https://github.com/realchendahuang/dahuang-human-tone)——去除中文文本里的 AI 味。
+每次分析或模拟都先标明层次：
 
-## 四大模型风格的味
+1. **家族风格**：跨多个快照反复出现的组织、语气和行为倾向。
+2. **版本快照**：某个具体时期、模型或官方样本表现出的风格；会漂移。
+3. **产品表面**：ChatGPT、Claude.ai、API、系统提示、格式配置和后处理造成的外观。
 
-每个风格有自己的味。想尝味，读对应风格的 profile + 词汇句式清单——这是这个 skill 的主菜：
+不要把产品配置当成家族人格。例如 API 中的 Markdown 行为只能说明特定接口和配置，不能仅凭纯文本反推模型家族。
 
-| 风格 | Profile（签名 + 加味方法） | 词汇句式清单（味标本） |
-|---|---|---|
-| OpenAI GPT / o-series | `profiles/openai-gpt-style.md` | `references/gpt-lexical-patterns.md` |
-| Anthropic Claude | `profiles/anthropic-claude-style.md` | `references/claude-lexical-patterns.md` |
-| Google Gemini | `profiles/google-gemini-style.md` | `references/gemini-lexical-patterns.md` |
-| 字节豆包 / Doubao | `profiles/bytedance-doubao-style.md` | `references/doubao-lexical-patterns.md` |
+## 证据纪律
 
-一句话闻味：
+开始任务前按需读取 \`references/evidence-policy.md\`，并遵守：
 
-- **GPT** 像方法论小作文——结论先行、分点升华、温情诗化。
-- **Claude** 4.8 直给观点不啰嗦（当前默认）；3.x 温柔谨慎 hedging（历史味）。
-- **Gemini** 像热情的解释型辅导老师——引号癖、夸夸开头、Think of it like this。
-- **豆包** 像嘴甜但容易糊弄的实习生——我太懂你、最X连发、哈哈抱歉抱歉。
+- 只引用能在原文中指出的词、句式、段落组织、格式或互动行为。
+- 至少组合两个不同层面的特征，再给家族级相似判断。
+- 同时列出一个竞争解释，例如通用 AI 腔、翻译腔、用户提示或人工编辑。
+- 单个口癖、Markdown、emoji、破折号、列表或“不是 A 而是 B”只能算弱信号。
+- 版本级判断默认不做；只有用户指定版本并且存在当前、可核对的样本时才模拟版本快照。
+- “高置信度”只用于受控同提示样本之间的风格比较；普通未知文本最高给中等相似度。
 
-DeepSeek、Grok、Kimi、Qwen 等暂不做默认 profile，用户明确要求时临时扩展。
+## 加味工作流
 
-## 加味（主玩法）
+### 1. 锁定不可改变的内容
 
-把正常文本改成某风格的纯味。
+保护事实、数字、术语、引语、结论和用户原有意图。风格模拟不能改事实。
 
-1. 读对应风格 profile 的"加味方法" + `references/reverse-humanizer.md`。
-2. **加味改的是结构/语气/行为模式，不是堆标志词**。加 Claude 味不能只塞"可能/取决于"，加豆包味不能只塞"你可以先……再……"。
-3. 想加哪个版本的味（Claude 4.8 是当前默认；3.x 是历史版本可选；o-series 无 markdown），看 profile 里的版本味说明。
-4. 自检：**把加的标志词删掉，文本还像不像那个风格？**不像就是堆口癖，重做。
-5. 交付时说明加了哪些味——具体改了什么组织方式。示范见 `examples/injection-report.md`。
+### 2. 选择目标层
 
-## 找味（次玩法）
+- 用户只给家族名：模拟家族级倾向。
+- 用户给具体版本：先核对该版本是否存在、资料是否当前；资料不足时明确按近似快照处理。
+- 用户给产品名：说明这是产品表面，不等于底层模型家族。
 
-指出一段文本里的 AI 味在哪、像哪个风格。
+### 3. 改组织方式
 
-1. 读对应风格 profile + lexical-patterns。
-2. 按文本顺序引用原文，每条指出它像哪个风格的什么味（具体词/句式/段落组织/行为模式）。
-3. 只说"风格相似"，不说"就是某模型生成的"——这是风格识别，不是来源鉴定。
-4. 不知道具体版本时只给风格级判断。
-5. 示范见 `examples/audit-report.md`。想看跨风格对比见 `examples/comparison.md`，想看真实味标本见 `examples/fixtures.md`。
+重点调整：
 
-## 识别纪律
+- 开场如何进入问题。
+- 判断、解释和例子的顺序。
+- 段落、列表和标题密度。
+- 谨慎、热情、顺从或直接的程度。
+- 如何处理不确定性、反驳和收尾。
 
-- **只能说"风格相似"，不能说"就是某模型生成"**。
-- **判断要落到可观察的东西**——具体词、句式、段落组织、行为模式，能指能引用，不靠印象。
-- **跨风格通用口癖不能单独判风格**——这是最容易认错的地方。通用 AI 味完整清单（21 项：AI 高频词、否定式排比、三段式法则、-ing 肤浅分析、em dash、共情腔、谄媚腔、通用积极结论等）见 `references/common-ai-patterns.md`。几个最易误判的：
-  - `delve` / `tapestry` 不是 GPT 专属，是跨风格 AI 通用词。
-  - em dash 不是 Gemini 专属（arXiv 数据：Gemini 2.5 Pro 的 em dash 频率反而比 GPT/Claude 低）。
-  - "You're absolutely right" 是 Claude + Gemini 跨风格共享。
-  - "不是 X 而是 Y" 是跨风格 AI 通用句式。
-  - 共情腔（"我能理解你为什么会这么想"）豆包、ChatGPT 中文疗愈腔都有。
-  - 判断力在**密度和组合**，不在单个词。各 lexical-patterns 文件末尾的"认味指引"列了专属 vs 通用的边界。
-- **这是风格识别，不是来源鉴定**，别拿去做严肃取证。
+标志词只能辅助，不能代替结构变化。删掉所有口癖后仍能看出目标风格，才算成功。
 
-## 宿主兼容
+### 4. 交付
 
-这个 skill 遵循 Agent Skills 规范（https://agentskills.io/specification），可在以下宿主使用：
+\`\`\`md
+## 改写后
+{完整文本}
 
-- OpenAI Codex：`Use $dahuang-ai-tone ...`
-- Anthropic Claude Code：`Use $dahuang-ai-tone ...`（或在 system prompt 里引用本 skill 路径）
-- 其他兼容 Agent Skills 的工具
+## 风格变化
+- {组织方式变化}
+- {语气或互动变化}
+- {格式或收尾变化}
 
-调用时把本 skill 目录作为资源根，SKILL.md 是入口，其他文件按需读取。
+## 边界
+这是 {家族 / 版本快照 / 产品表面} 的风格模拟，不代表由该模型生成。
+\`\`\`
 
-## 资源说明
+用户只要成品时，省略解释和边界段，只交付改写。
 
-- `profiles/`：四大模型风格的味签名 + 加味方法 + 版本味说明。
-- `references/*-lexical-patterns.md`：四大模型风格的词汇句式味标本（每份末尾有"专属 vs 跨风格通用"的识别指引）。
-- `references/common-ai-patterns.md`：跨风格通用 AI 味清单（21 项）——加味原料 + 认味防误判。
-- `references/reverse-humanizer.md`：加味总方法 + 交付格式 + 自检规则。
-- `examples/injection-report.md`：加味示范（同一段原文加成不同风格的味）。
-- `examples/audit-report.md`：找味示范。
-- `examples/comparison.md`：跨风格对比 + 同一意思不同风格怎么写。
-- `examples/fixtures.md`：真实味标本（官方/Aider/学术来源），拿来尝味。
-- `agents/openai.yaml`：Codex 专属 UI 元数据（可选，不影响 skill 功能）。
+## 找味工作流
+
+1. 按原文顺序短引证据。
+2. 先标通用 AI 模式，再标更有区分度的家族特征。
+3. 区分家族、版本快照和产品表面。
+4. 给低或中等相似度，并说明最强反证或替代解释。
+5. 不猜作者身份、生成平台或具体版本。
+
+\`\`\`md
+## 风格审计
+
+**主要相似方向**：{家族级 / 通用 AI 腔 / 无法区分}
+**相似度**：低 / 中
+
+- **原文证据**：{短引用}
+  **观察**：{词、句式、结构或行为}
+  **更像**：{家族或通用模式}
+  **竞争解释**：{翻译腔、提示约束、人工编辑等}
+
+## 结论边界
+这是风格相似性分析，不是来源鉴定，也不能确认具体版本。
+\`\`\`
+
+## 按需读取资源
+
+不要一次加载全部资料：
+
+| 任务 | 文件 |
+|---|---|
+| 任何找味任务或版本级模拟 | \`references/evidence-policy.md\` |
+| 通用 AI 腔 | \`references/common-ai-patterns.md\` |
+| GPT / OpenAI 风格 | \`profiles/openai-gpt-style.md\` + \`references/gpt-lexical-patterns.md\` |
+| Claude 风格 | \`profiles/anthropic-claude-style.md\` + \`references/claude-lexical-patterns.md\` |
+| Gemini 风格 | \`profiles/google-gemini-style.md\` + \`references/gemini-lexical-patterns.md\` |
+| 豆包风格 | \`profiles/bytedance-doubao-style.md\` + \`references/doubao-lexical-patterns.md\` |
+| 加味的通用方法 | \`references/reverse-humanizer.md\` |
+| 需要校准报告格式 | \`examples/injection-report.md\`、\`examples/audit-report.md\`、\`examples/comparison.md\` |
+| 需要核对历史样本 | \`examples/fixtures.md\` |
+
+## 边界
+
+- 不把风格相似写成“由某模型生成”。
+- 不把静态文档里的某个版本称为“当前默认”；需要当前信息时重新核对官方资料。
+- 不用单一词表、分数或关键词脚本做模型归因。
+- 不把 API 参数、系统提示或产品 UI 造成的格式误写成模型人格。
+- 不为加味篡改事实或虚构用户经历。

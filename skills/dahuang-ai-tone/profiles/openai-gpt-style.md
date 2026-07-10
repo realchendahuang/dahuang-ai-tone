@@ -1,126 +1,94 @@
-# OpenAI GPT / o-series 风格
+# OpenAI GPT / reasoning 风格
 
-## 适用边界
+描述可模拟的写作表面，不用于识别生成来源。先读 \`references/evidence-policy.md\`。
 
-这个 profile 只描述 OpenAI GPT / o-series 风格的味，不判断文本来源。GPT 和 o-series 是两股味，下面会标。不知道具体版本时只说"OpenAI GPT 风格相似"或"o-series 表面相似"。
+## 目录
 
-完整的 GPT/ChatGPT 词汇与句式清单见 `references/gpt-lexical-patterns.md`。这里列最有判断力的风格签名。
+1. 家族级倾向
+2. reasoning 与 GPT 的任务表面
+3. 产品和配置表面
+4. 加味方法
+5. 误判边界
+6. 来源
 
-## 可观察签名
+## 家族级倾向
 
-### o-series 默认不输出 markdown
+以下适合作为模拟方向，不能单独用于归因：
 
-o-series（o1-2024-12-17+）在 API 里**默认不生成 markdown 格式**，需要 developer message 里写 `Formatting re-enabled` 才开。
+- 先给结论或可执行答案，再用分点补理由。
+- 喜欢把问题整理成方法、步骤、清单或决策框架。
+- 语气通常完整、稳妥、可交付，容易把结尾收成总结或下一步。
+- 在散文任务中可能出现流畅、温情、意象化的成品感。
+- 在中文说明文中容易出现“核心在于”“更重要的是”“综上”等通用 AI 结构。
 
-这是极强的版本签名。如果文本是纯文本段落、无分点无标题，且属于 OpenAI 风格，可以提 o-series 表面相似。
+这些特征与其他家族高度重叠。必须结合互动方式、任务表面和多个结构特征判断。
 
-来源：OpenAI reasoning-best-practices 官方文档。
+## reasoning 与 GPT 的任务表面
 
-### o-series = 规划者，GPT = workhorse
+OpenAI 官方文档把 reasoning models 和 GPT models 视为不同的提示对象：
 
-OpenAI 官方定性：
+- reasoning models 更适合高层目标和直接约束。
+- GPT models 更受益于明确的角色、逻辑、数据和输出要求。
 
-- o-series = "the planners"：先规划后执行，会主动问澄清问题而不是瞎猜。
-- GPT 系列 = "the workhorses"：直接执行，依赖显式指令。
+这是提示与任务分工，不是稳定文风。模拟时可以这样区分：
 
-可观察：o-series 倾向先给计划/澄清，GPT 倾向直接给答案。
+- **reasoning 表面**：问题定义更克制，先澄清成功条件，少展示模板化推理过程。
+- **GPT 表面**：执行路径更显式，结构、步骤和交付格式更完整。
 
-来源：OpenAI reasoning-best-practices 官方文档。
+不要把“先问问题”写成 reasoning models 的必然人格；是否澄清首先取决于输入是否缺信息和提示要求。
 
-### GPT 散文温情诗化、意象堆叠、拟人命名
+## 产品和配置表面
 
-OpenAI 官方 prompt-engineering 文档里的 GPT-5.5 睡前故事样本：
+### API Markdown 行为
 
-> "Under the soft glow of the moon, Luna the unicorn danced through fields of twinkling stardust, leaving trails of dreams for every child asleep."
+OpenAI reasoning best practices 说明：从 \`o1-2024-12-17\` 起，API reasoning models 会避免 Markdown，开发者可在 developer message 首行加入 \`Formatting re-enabled\` 开启。
 
-可观察：拟人化命名（Luna）、意象堆叠（moon/stardust/dreams）、抒情收尾"for every child asleep"。这是 GPT 散文的标志性"温情诗化"腔。
+这只能说明特定 API 与配置表面：
 
-来源：OpenAI prompt-engineering 官方文档（model gpt-5.5）。
+- 已知上下文是该 API 配置时，可以模拟纯文本输出。
+- 面对未知文本时，“没有 Markdown”只是弱信号，不能反推 OpenAI 或 o-series。
+- ChatGPT、Codex、第三方产品和后处理可能呈现完全不同的格式。
 
-### chatgpt-4o-latest 格式脏
+### 官方示例
 
-Aider polyglot 榜单（225 题）：chatgpt-4o-latest 格式合规率仅 64.4%、85 次畸形响应，远低于 Claude/Gemini。
-
-可观察：如果文本属于 OpenAI 风格但格式混乱、分点不规范、结构有瑕疵，可以提 chatgpt-4o 表面相似。
-
-来源：Aider polyglot 榜单。
-
-### 反感 CoT 引导，偏好 zero-shot
-
-OpenAI 官方建议：o-series 的提示"Keep prompts simple and direct""Avoid chain-of-thought prompts""Try zero shot first"。
-
-可观察：o-series 不需要也不喜欢"think step by step"式引导，反感冗余铺垫。
-
-来源：OpenAI reasoning-best-practices 官方文档。
-
-### ChatGPT 中文本地化口癖（WIRED 报道，风格专属）
-
-WIRED 2026 年报道里点名的 ChatGPT 中文专属口癖：
-
-- **"我会稳稳地接住你"**——来自 "I've got you" 的安抚语，中文里过分亲密、过分心理咨询化，已在中文互联网变梗。
-- **"砍一刀"**——和拼多多/Temu 营销语有关。
-
-这两个是 WIRED 明确报道的 ChatGPT 中文口癖，可以作为 GPT 风格签名（中文文本场景）。来源：https://www.wired.com/story/chatgpt-chinese-catch-you-steadily-sycophancy
-
-### 词汇/句式口癖清单（详见独立文件）
-
-完整的 GPT/ChatGPT 词汇与句式可观察清单见 `references/gpt-lexical-patterns.md`。这里只列**判断力最强的核心项**：
-
-**句式（比单词更有判断力）**：
-- `not only... but also...` / `not X, but Y`（Wikipedia 称 Negative parallelisms）
-- rule of three（三个形容词或三个短语）
-- didactic disclaimers（`It's important to note that...`）
-- section summaries（`In summary` / `In conclusion` / `Ultimately`）
-
-**中文句式**：
-- `不是 X，而是 Y` / `不只是 X，更是 Y` / `表面上是 X，本质上是 Y`（跨风格 AI 通用，不专属 GPT）
-
-**格式癖**：
-- 冒号滥用（`X: Y` 到处用，Reddit 吐槽的 ChatGPT 标志）
-- 过度 markdown/粗体/竖向列表/em dash（AI 通用，GPT 高频）
-
-**关键警告**：大多数英文高频词（delve/tapestry/landscape/underscore/intricate/pivotal/crucial/meticulous/robust/foster 等）是**跨风格 AI 通用口癖，不是 GPT 专属**。不能凭单个词判 GPT——判断力在密度和组合。详见 `references/gpt-lexical-patterns.md` 的"认味指引"。
-
-## GPT 的味（业界共识）
-
-这些是 GPT 风格的组织方式印象：
-
-- 倾向把问题拆成清晰任务步骤。
-- 喜欢提供结构化答案：结论、原因、步骤、注意事项。
-- 解释欲较强，常补上下文和可执行建议。
-- 默认语气稳、礼貌、完整，收尾会给下一步。
-- 在产品对话中可能出现"我可以继续帮你……"这类协作痕迹。
-
-## 版本味差异
-
-- **o-series（o1-2024-12-17+）**：默认无 markdown、规划者、爱澄清、反感 CoT 引导——"纯文本规划者"味。
-- **chatgpt-4o-latest**：格式合规率 64.4%、畸形多——"快但脏"味。
-- **GPT-5.5**：散文温情诗化（官方睡前故事样本）。
-- **GPT-4 时代（2023-2024 中期）**高频词：delve / tapestry / testament / intricate / meticulous / pivotal / underscore / landscape / garner / vibrant 等（词表更广）。
-- **GPT-4o 时代（2024 中期-2025 中期）**高频词收缩到：align with / bolstered / crucial / emphasizing / enhance / enduring / fostering / highlighting / pivotal / showcasing / underscore / vibrant。
-- **GPT-5 时代（2025 中期以后）**高频词只剩：emphasizing / enhance / highlighting / showcasing。
-
-时代词汇变迁可作为版本味的半硬证据——Wikipedia 提醒"不是硬切分"。完整词表见 `references/gpt-lexical-patterns.md` 第八节。
-
-## 认味不丢人
-
-- **大多数英文高频词（delve/tapestry/landscape 等）是跨风格 AI 通用，不是 GPT 专属**——Claude/Gemini/中文模型都可能用。不能凭单个词判 GPT，判断力在密度和组合。详见 `references/gpt-lexical-patterns.md` 的"认味指引"。
-- `不是 X 而是 Y` 是跨风格 AI 通用句式，不是 GPT 专属。
-- 温情诗化散文也可能来自人类或 Gemini，不是 GPT 专属。
-- 很多专业写作者和产品经理也会"先结论再分点再下一步"，不能凭结构化就判 GPT。
-- 学术英语本来就用 delve/underscore/intricate，人类学者也会用。
+OpenAI prompt-engineering 页面包含一条月光、独角兽和星尘的抒情示例。它证明模型可以被提示成温情诗化风格，不证明所有 GPT 输出都如此，也不应被标成永久版本签名。
 
 ## 加味方法
 
-加味不是堆口癖，是改回答表面（结构、语气、行为模式）。见 `references/reverse-humanizer.md`。
+### GPT 家族味
 
-加 GPT 味：
+1. 第一段直接给结论或主张。
+2. 把解释组织成少量清楚的步骤或维度。
+3. 每一项都补一个可执行动作或具体例子。
+4. 收尾给明确下一步；不要自动升华。
+5. 需要“经典 ChatGPT 味”时，再适量加入完整分点、礼貌缓冲和总结感。
 
-1. 先给一句直接结论。
-2. 把理由拆成 3-5 点（带编号）。
-3. 补"如果要继续，可以……"式任务化下一步。
-4. 语气清晰、稳妥、工具化。
-5. 加 o-series 味：去掉 markdown 格式，改成纯文本段落；开头先问一个澄清问题或给一句规划。
-6. 加 GPT 散文味：加入拟人命名、意象堆叠、抒情收尾。
-7. 加 ChatGPT 中文味：可参考 `references/gpt-lexical-patterns.md` 的句式和口癖，但**不要堆单个词**——要改的是句式密度和组织方式。"我会稳稳地接住你""砍一刀"是 WIRED 报道的 ChatGPT 中文签名，但用要克制，避免变成梗。
-8. 加版本时代味：GPT-4 时代用更广的词表（delve/tapestry/testament），GPT-5 时代收缩到（emphasizing/enhance/highlighting/showcasing）。见 `references/gpt-lexical-patterns.md` 第八节。
+### reasoning API 表面
+
+只在用户明确要求时：
+
+1. 用直接目标和约束进入任务。
+2. 不写“让我们一步步思考”或展开隐藏推理。
+3. 已知目标缺关键条件时问一个必要问题，否则直接执行。
+4. 用户指定旧 API Markdown 表面时输出纯文本；没有指定就不强制。
+
+### 温情散文味
+
+1. 使用一个具体意象，而不是堆一串“delve / tapestry”。
+2. 给对象轻度拟人化或命名。
+3. 用柔和画面收尾，不补方法论总结。
+
+## 误判边界
+
+- 结论先行、列表、Markdown、温情收尾都是跨家族特征。
+- 提示词可以完全覆盖默认风格。
+- API 格式行为、ChatGPT 产品表面和模型家族必须分开。
+- 词汇时代差异只能作为历史观察，不能用于判断具体版本。
+- 未知文本最高给中等家族相似度，不输出版本归因。
+
+## 来源
+
+- OpenAI Prompt engineering: https://developers.openai.com/api/docs/guides/prompt-engineering
+- OpenAI Reasoning best practices: https://developers.openai.com/api/docs/guides/reasoning-best-practices
+
+核对日期：2026-07-10。官方文档明确说明同一家族不同快照可能表现不同，应以受控样本和评测验证行为。

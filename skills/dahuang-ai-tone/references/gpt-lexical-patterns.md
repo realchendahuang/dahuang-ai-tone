@@ -347,7 +347,7 @@ showcasing
 
 **大多数英文高频词（delve/tapestry/landscape/underscore/intricate/pivotal/crucial/meticulous/robust/foster/garner/highlight/emphasize/showcase/bolster/enduring/interplay/valuable/vibrant）是跨风格 AI 通用口癖，不是 GPT 专属。** Claude、Gemini、中文模型都可能用。不能凭单个词判 GPT。
 
-**GPT/ChatGPT 专属（可作为风格签名）**：
+**较常被报道为 ChatGPT 产品表面的口癖（仍不是来源签名）**：
 - 中文"我会稳稳地接住你""砍一刀"——WIRED 报道的 ChatGPT 中文本地化口癖。
 - 冒号滥用（`X: Y` 到处用）——Reddit 吐槽的 ChatGPT 格式癖。
 
@@ -359,17 +359,17 @@ showcasing
 
 `not X but Y`、`not only... but also...`、rule of three、didactic disclaimers、section summaries 这些**句式**比单个词更有判断力，因为它们是组织方式，不是词汇选择。
 
-### 4. 时代词汇变迁是版本半硬证据
+### 4. 时代词汇变迁只适合做历史观察
 
-GPT-4/4o/5 时代的词汇差异（Wikipedia 社群整理）可以作为**版本判断的半硬证据**——不是官方明文，但有社群数据支撑。如果文本高频用 `delve/tapestry/testament`，偏 GPT-4 时代；高频用 `align with/fostering/showcasing`，偏 GPT-4o 时代；只剩 `emphasizing/enhance/highlighting/showcasing`，偏 GPT-5 时代。但要标低置信度，因为 Wikipedia 提醒"不是硬切分"。
+Wikipedia 社群整理过不同时期 AI 高频词的变化，但这些词跨模型、跨语料、跨编辑流程共享。可以用来理解历史语料，不应用于判断未知文本的 GPT 版本。
 
 ### 5. 中文口癖的判断力
 
-中文"不是 X 而是 Y"是跨风格 AI 通用句式（Threads/Facebook/WIRED 都在吐槽，但没说是 GPT 专属）——不能凭它判 GPT。但"我会稳稳地接住你""砍一刀"是 WIRED 明确报道的 ChatGPT 中文口癖，可以作为 GPT 风格签名。
+中文“不是 X 而是 Y”是跨风格 AI 通用句式，不能凭它判 GPT。“我会稳稳地接住你”“砍一刀”虽被媒体报道为 ChatGPT 中文产品口癖，也只能作为产品表面观察。
 
 ### 6. 格式口癖
 
-过度 markdown/粗体/竖向列表/em dash/跳级标题/冒号滥用——这些是 AI 通用格式癖，不区分风格，但 GPT 风格（尤其 ChatGPT 产品表面）高频。o-series 例外：默认无 markdown（见 `profiles/openai-gpt-style.md`）。
+过度 Markdown、粗体、竖向列表、em dash、跳级标题和冒号滥用是通用格式模式。部分 reasoning API 的无 Markdown 行为属于特定配置表面，不能用来反推家族（见 `profiles/openai-gpt-style.md`）。
 
 ### 7. 反误判
 

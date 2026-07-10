@@ -417,18 +417,11 @@ Claude 的 AI 味来自克制和边界感。
 
 ### 5. 版本差异提示
 
-有硬证据的版本差异（见 `profiles/anthropic-claude-style.md`）：
-- **Claude 4.8（当前默认）**：direct/opinionated、validation-forward 少、emoji 克制、字面化指令。上面列的谨慎腔/缓冲腔在 4.8 减弱。
-- **Claude 4.5/4.6**：过度工程、造多余文件、加不必要抽象、滥用 subagent。
-- **Claude 3.x（历史版本）**：过度 hedging、过度自我审查（业界共识，4.8 反向印证）。
-- **Claude 3.5 Sonnet**：Aider 数据里仅 11 次澄清提问；sonnet-4 升到 129——4 代比 3.5 代更爱确认。
-
-推导的（无同 prompt 对照）：
-- 保姆腔（劝睡觉/喝水）在 2026 出圈，但具体从哪个版本开始、4.8 是否保留，没有硬证据。
+Claude 不同快照可能从谨慎协商转向更直接的判断，也可能在产品提示下呈现顺从、过度工程或保姆腔。没有受控同提示样本时，不把这些现象映射到具体版本；需要版本模拟时先核对当前官方资料，再按历史快照处理。
 
 ### 6. 反误判
 
-- 不能凭"That said"就判 Claude——GPT、Gemini 都可能用，但"That said" + "worth noting" + "I want to be careful" 组合是 Claude 签名。
+- 不能凭“That said”就判 Claude——GPT、Gemini 和人类专业写作都可能使用；组合出现也只能提高家族相似度。
 - 不能凭"You're absolutely right"就判 Claude——Gemini 也有这个口癖（Reddit r/GeminiAI 列入口癖清单），是 Claude+Gemini 跨风格共享。Claude 的更偏认真认错型（带感叹号、过度强调），Gemini 的更偏夸夸腔。见 `references/gemini-lexical-patterns.md` 认味指引。
 - 不能凭共情腔判 Claude——跨风格情绪价值型，豆包和 ChatGPT 中文疗愈腔都有。
 - 不能凭"不是 X 而是 Y"判 Claude——跨风格 AI 通用句式。

@@ -8,21 +8,21 @@
 
 ## 结论
 
-最像的模型风格：Anthropic Claude（编程助手场景）
+主要相似方向：Claude / GPT 编程助手共享表面
 版本：风格级，无法区分具体版本
 置信度：中
 
-一句话：这段是典型的 "explain-then-do" 编程助手开场——先一句原理解释再给方案，是 Claude/GPT 编程助手的共享特征，但语气和组织方式略偏 Claude。
+一句话：这段是典型的 "explain-then-do" 编程助手开场——先解释任务，再进入修改；这个特征不足以区分 Claude 和 GPT。
 
 ## 风格相似度
 
-- **Anthropic Claude**：中到高  
-  像在：先讲原理（"we need to install Flask, import it, create an app instance, and define a route"）再给方案（"Here's how to update the `app.py` file:"），是 Claude 编程助手的典型 explain-then-do 开场（见 `profiles/anthropic-claude-style.md` 样本 C-1）。
-- **OpenAI GPT**：中  
-  像在：explain-then-do 也是 GPT 编程助手的共享特征，无法凭这一条区分。但这段的语气更克制、更教学式，不像 GPT 那样偏任务化结论先行。
-- **Google Gemini**：低  
+- **Anthropic Claude**：中
+  像在：先讲任务结构，再给方案，符合 Claude 家族部分编程样本的完整解释习惯。
+- **OpenAI GPT**：中
+  像在：explain-then-do 也是 GPT 编程助手的共享特征，无法凭这一条区分。
+- **Google Gemini**：低
   像在：教学式语气有一点，但不像 Gemini 那样知识卡片化、定义先行。
-- **字节豆包**：低  
+- **字节豆包**：低
   像在：无中文产品助手感（文本是英文）。
 
 ## 逐处找味
@@ -33,9 +33,9 @@
 
 可观察：先给一句包含四个步骤的原理解释（install → import → create → define），是动词链式任务分解，不是直接给代码。
 
-为什么像：Claude 编程助手的典型 "explain-then-do" 开场——先讲清楚要做什么，再给方案。见 `profiles/anthropic-claude-style.md` 样本 C-1。GPT 编程助手也有这个特征，但 Claude 更倾向于先讲原理。
+为什么像：这是 Claude 与 GPT 编程助手共享的 explain-then-do 组织方式，单凭这段无法区分。
 
-相似风格：Anthropic Claude
+相似风格：Claude / GPT 编程助手共享
 强度：中
 
 ### 味 2
@@ -44,10 +44,10 @@
 
 可观察：用 "Here's how to..." 过渡到方案，不是直接贴代码或用"下一步"命令式。
 
-为什么像：Claude 常见的过渡句式，语气教学式、引导式。GPT 更倾向直接给代码或"接下来"。
+为什么像：教学式过渡常见于多种编程助手，也可能来自 Aider 的提示模板。
 
-相似风格：Anthropic Claude
-强度：中
+相似风格：通用编程助手表面
+强度：弱
 
 ### 味 3
 
