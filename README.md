@@ -1,8 +1,11 @@
 # Dahuang AI Tone
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Skill Version](https://img.shields.io/badge/Skill-v4.0.0-111827.svg)](CHANGELOG.md)
-[![Language](https://img.shields.io/badge/Language-中文写作-e11d48.svg)](skills/dahuang-ai-tone/SKILL.md)
+[![GitHub stars](https://img.shields.io/github/stars/realchendahuang/dahuang-ai-tone?style=social)](https://github.com/realchendahuang/dahuang-ai-tone)
+[![GitHub forks](https://img.shields.io/github/forks/realchendahuang/dahuang-ai-tone?style=social)](https://github.com/realchendahuang/dahuang-ai-tone/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/realchendahuang/dahuang-ai-tone)](https://github.com/realchendahuang/dahuang-ai-tone/issues)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/realchendahuang/dahuang-ai-tone/pulls)
+[![Follow @realchendahuang](https://img.shields.io/badge/Follow-%40realchendahuang-1DA1F2?logo=x&logoColor=white)](https://x.com/realchendahuang)
 
 > 模拟或分析 GPT、Claude、Gemini、豆包等模型家族的可观察写作风格。它做的是风格实验，不是来源鉴定。
 
